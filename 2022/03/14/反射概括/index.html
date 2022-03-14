@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线程死锁, 弱翁茶馆">
-    <meta name="description" content="一、死锁​        多线程情况下，线程间持有对方所需要的锁，导致都不释放锁，都进入阻塞状态，这种现象不会有任务检测和异常发生，所以一定要避免。
-同一个类对象的实例方法， 或者类的静态方法，如果这个对象中的实例方法都是同步方法，这些同步">
+    <meta name="keywords" content="反射概括, 弱翁茶馆">
+    <meta name="description" content="一、反射​    Java提供的一种反射（reflect）机制：可以通过一个Java类的字节码对象，使用它提供的API来获取这个字节码对象中的所有成员。
+1.1 字节码对象​    一个Java类源码编译后生成了字节码文件，这个字节码文件被">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>线程死锁 | 弱翁茶馆</title>
+    <title>反射概括 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">线程死锁</h1>
+                    <h1 class="description center-align post-title">反射概括</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%AD%BB%E9%94%81/">
-                                <span class="chip bg-color">死锁</span>
+                            <a href="/tags/%E5%8F%8D%E5%B0%84/">
+                                <span class="chip bg-color">反射</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-11
+                    2022-03-14
                 </div>
                 
 
@@ -468,17 +468,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、死锁"><a href="#一、死锁" class="headerlink" title="一、死锁"></a>一、死锁</h1><p>​        多线程情况下，线程间持有对方所需要的锁，导致都不释放锁，都进入阻塞状态，这种现象不会有任务检测和异常发生，所以一定要避免。</p>
-<p>同一个类对象的实例方法， 或者类的静态方法，如果这个对象中的实例方法都是同步方法，这些同步方法被同一个监视器锁锁定，那么一个线程进入其中一个同步方法，不允许其他线程进入任意一个同步方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                <h1 id="一、反射"><a href="#一、反射" class="headerlink" title="一、反射"></a>一、反射</h1><p>​    Java提供的一种反射（reflect）机制：可以通过一个Java类的字节码对象，使用它提供的API来获取这个字节码对象中的所有成员。</p>
+<h2 id="1-1-字节码对象"><a href="#1-1-字节码对象" class="headerlink" title="1.1 字节码对象"></a>1.1 字节码对象</h2><p>​    一个Java类源码编译后生成了字节码文件，这个字节码文件被加载到JVM内存时，Java系统会对应的生成一个对象，这个对象就是字节码对象，所有的字节码对象都是Class类的实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">当使用某个类时，这个类的字节码文件</span><br><span class="line">如果在classpath类路径下能被找到,就可以被</span><br><span class="line">加载到虚拟机,然后JVM会自动的生成一个对应的字节码对象</span><br><span class="line">    </span><br><span class="line">    使用类的情况：</span><br><span class="line">    	<span class="number">1.</span> 创建类的对象</span><br><span class="line">    	<span class="number">2.</span> 创建这个类的子类对象</span><br><span class="line">    	<span class="number">3.</span> 调用这个类的静态方法、静态变量</span><br><span class="line">    	<span class="number">4.</span> 通过反射的方法</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 
-<p>演示死锁</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ZhongLian</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">repositoryA</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;进入了中联的A仓库&quot;</span>);</span><br><span class="line"></span><br><span class="line">        SanYi.repositoryB();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">repositoryB</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;进入了中联的B仓库&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SanYi</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">repositoryA</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;进入了三一的A仓库&quot;</span>);</span><br><span class="line">        ZhongLian.repositoryB();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">repositoryB</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;进入了三一的B仓库&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ShunFeng</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">100</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">            ZhongLian.repositoryA();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">YuanTong</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            SanYi.repositoryA();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建线程对象</span></span><br><span class="line">        <span class="type">ShunFeng</span> <span class="variable">sf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ShunFeng</span>();</span><br><span class="line">        sf.setName(<span class="string">&quot;顺丰&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">YuanTong</span> <span class="variable">yt</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">YuanTong</span>();</span><br><span class="line">        yt.setName(<span class="string">&quot;圆通&quot;</span>);</span><br><span class="line"></span><br><span class="line">        sf.start();</span><br><span class="line">        yt.start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<p>​    如何获取到某个类的字节码对象，通过下面三种方式，这三种方式获取到的字节码对象是同一个。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">方式一：</span><br><span class="line">    通过 类名.class 属性获取</span><br><span class="line"></span><br><span class="line">方式二</span><br><span class="line">	通过 对象.getClass() 实例方法</span><br><span class="line">	</span><br><span class="line">方式三	</span><br><span class="line">	Class.forName(&quot;类的全限定名称&quot;) 静态方法获取</span><br></pre></td></tr></table></figure>
 
-<p>​    在设计类，如果一个方法内部没有对共享数据进入读写操作就不要使用同步技术，比如一个方法只是读取数据，不要加同步锁</p>
-<h1 id="二、线程间通信（生产消费者模式）"><a href="#二、线程间通信（生产消费者模式）" class="headerlink" title="二、线程间通信（生产消费者模式）"></a>二、线程间通信（生产消费者模式）</h1><p>​            监视器对象.wait() : 让当前被监视的线程等待，并释放锁，进入无限等待状态，CPU不会执行</p>
-<p>​            监视器对象.notify(): 唤醒该监视器上任意一个等待的线程对象，被唤醒的线程对象会进入可运行状态</p>
-<p>​            监视器对象.notifyAll():  唤醒该监视器上所有等待的线程对象</p>
+
+
+<p>Java中所有的都是对象</p>
+<p>基本数据类型也会自动装箱，变为对象</p>
+<p>一个类的变量 是系统的 Field 类的对象</p>
+<p>一个类的方法 是系统的 Method类的对象</p>
+<p>一个类的构造方法 是系统 Constructor类的对象</p>
+<h1 id="二、注解（Annotation）"><a href="#二、注解（Annotation）" class="headerlink" title="二、注解（Annotation）"></a>二、注解（Annotation）</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注解可以描述Java对象的某种状态</span><br><span class="line">注解可以携带一些参数，可以通过反射获取注解中设置参数（数据）</span><br></pre></td></tr></table></figure>
+
+<p>元注解： 修饰注解的注解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Target()   </span><br><span class="line">	定义当前注解能修饰什么成员</span><br><span class="line">@Retention()</span><br><span class="line">	定义当前注解的保留策略</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target()</span>需要和ElementType配置使用</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">ElementType</span> &#123;</span><br><span class="line">   	<span class="comment">// 当前注解能修饰枚举、类、接口</span></span><br><span class="line">    TYPE,</span><br><span class="line">    <span class="comment">// 当前注解能修饰字段</span></span><br><span class="line">    FIELD,</span><br><span class="line">    <span class="comment">// 当前注解能修饰方法</span></span><br><span class="line">    METHOD,</span><br><span class="line">    <span class="comment">// 当前注解能修饰方法参数</span></span><br><span class="line">    PARAMETER,</span><br><span class="line">    <span class="comment">// 当前注解能修饰构造方法</span></span><br><span class="line">    CONSTRUCTOR,</span><br><span class="line">    <span class="comment">// 当前注解能修饰局部变量</span></span><br><span class="line">    LOCAL_VARIABLE,</span><br><span class="line">	<span class="comment">// 当前注解能修饰注解</span></span><br><span class="line">    ANNOTATION_TYPE,</span><br><span class="line">	<span class="comment">// 当前注解能修饰包</span></span><br><span class="line">    PACKAGE,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注解的属性： 定义的方式跟定义接口中的抽象方法一致，但是不能再当作抽象方法，只能当作注解对象的属性</p>
+<p>@Retention() ： 定义注解可以保留到什么时期</p>
+<p>需要配合</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">RetentionPolicy</span> &#123;</span><br><span class="line">    <span class="comment">// 定义当前注解只在源文件中有效，通过字节码反射获取不到</span></span><br><span class="line">    SOURCE,</span><br><span class="line">    <span class="comment">// 定义当注解在源文件、字节码文件中有效，注解可以编译到字节码文件中，但反射拿不到</span></span><br><span class="line">    CLASS,</span><br><span class="line">    <span class="comment">// 定义当前注解在源文件、字节码文件、运行期有效，反射可以获取这个注解</span></span><br><span class="line">    RUNTIME</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -505,7 +537,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/11/%E7%BA%BF%E7%A8%8B%E6%AD%BB%E9%94%81/">https://shujian2022.github.io/2022/03/11/%E7%BA%BF%E7%A8%8B%E6%AD%BB%E9%94%81/</a>
+                    <a href="https://shujian2022.github.io/2022/03/14/%E5%8F%8D%E5%B0%84%E6%A6%82%E6%8B%AC/">https://shujian2022.github.io/2022/03/14/%E5%8F%8D%E5%B0%84%E6%A6%82%E6%8B%AC/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,8 +575,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%AD%BB%E9%94%81/">
-                                    <span class="chip bg-color">死锁</span>
+                                <a href="/tags/%E5%8F%8D%E5%B0%84/">
+                                    <span class="chip bg-color">反射</span>
                                 </a>
                             
                         </div>
@@ -718,9 +750,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/14/%E5%8F%8D%E5%B0%84%E6%A6%82%E6%8B%AC/">
                     <div class="card-image">
@@ -738,9 +771,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -749,6 +782,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -767,13 +801,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/10/%E7%BA%BF%E7%A8%8B%E5%B8%B8%E7%94%A8API/">
+                <a href="/2022/03/11/%E7%BA%BF%E7%A8%8B%E6%AD%BB%E9%94%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="线程常用API">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="线程死锁">
                         
-                        <span class="card-title">线程常用API</span>
+                        <span class="card-title">线程死锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,7 +818,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
                             </span>
                         <span class="publish-author">
                             
@@ -797,8 +831,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BA%BF%E7%A8%8B%E5%B8%B8%E7%94%A8API/">
-                        <span class="chip bg-color">线程常用API</span>
+                    <a href="/tags/%E6%AD%BB%E9%94%81/">
+                        <span class="chip bg-color">死锁</span>
                     </a>
                     
                 </div>
