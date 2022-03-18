@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML常用标签, 弱翁茶馆">
-    <meta name="description" content="一、HTML常用标签1.1 图像标签1234&amp;lt;img src=&amp;quot;&amp;quot; alt=&amp;quot;&amp;quot;/&amp;gt;    src属性（source 资源） ： 设置图像的资源路径    alt属性： 当图像资源不显示时">
+    <meta name="keywords" content="常用CSS样式属性, 弱翁茶馆">
+    <meta name="description" content="一、常用的CSS样式属性font-style: 设置字体的类型
+​            normal: 正体字（默认值）
+​            italic： 斜体字
+font-weight: 设置字体的粗细
+​           ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HTML常用标签 | 弱翁茶馆</title>
+    <title>常用CSS样式属性 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTML常用标签</h1>
+                    <h1 class="description center-align post-title">常用CSS样式属性</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
-                                <span class="chip bg-color">HTML常用标签</span>
+                            <a href="/tags/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
+                                <span class="chip bg-color">常用CSS样式属性</span>
                             </a>
                         
                     </div>
@@ -446,7 +450,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-16
+                    2022-03-17
                 </div>
                 
 
@@ -467,112 +471,100 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、HTML常用标签"><a href="#一、HTML常用标签" class="headerlink" title="一、HTML常用标签"></a>一、HTML常用标签</h1><h2 id="1-1-图像标签"><a href="#1-1-图像标签" class="headerlink" title="1.1 图像标签"></a>1.1 图像标签</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;&quot;</span> alt=<span class="string">&quot;&quot;</span>/&gt;</span><br><span class="line">    src属性（source 资源） ： 设置图像的资源路径</span><br><span class="line">    alt属性： 当图像资源不显示时的提示文本</span><br><span class="line">    title属性：当鼠标悬停在图像上，设置标题</span><br></pre></td></tr></table></figure>
-
-<p>路径： </p>
-<p>​    网络路径 url </p>
-<p>​    绝对路径： 资源在文件系统中的真实路径</p>
-<p>​                            C:/a.png</p>
-<p>​    相对路径：从代码所在的文件开始寻找</p>
-<pre><code>## 1.2超链接图像
-</code></pre>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;&quot;</span>/&gt;</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-3-表单和表单元素"><a href="#1-3-表单和表单元素" class="headerlink" title="1.3 表单和表单元素"></a>1.3 表单和表单元素</h2><p>表单： 在网页中用于采集用户数据，并将用户数据提交给后台服务器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;   -- 表单标签</span><br><span class="line">    	&lt;input /&gt;   -- 输入型表单元素标签</span><br><span class="line">    		</span><br><span class="line">    	&lt;select&gt;	-- 下拉列表表单元素标签</span><br><span class="line">    		&lt;option&gt;&lt;/option&gt;  -- 列表选项标签</span><br><span class="line">    		...</span><br><span class="line">    	&lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    	&lt;textarea&gt;  -- 多行文本域		</span><br><span class="line">    	&lt;/textarea&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-1-input输入型的表单元素"><a href="#1-3-1-input输入型的表单元素" class="headerlink" title="1.3.1 input输入型的表单元素"></a>1.3.1 input输入型的表单元素</h3><p>input标签：</p>
-<p>​                type属性：指定是什么类型的输入元素标签</p>
-<p>​                            常用的值：</p>
-<p>​                             - text   单行文本框 默认</p>
-<p>​                                    -value属性：文本框的文本内容</p>
-<p>​                                    -required属性：是否必填</p>
-<p>​                                    -readonly属性：是否只读</p>
-<p>​                                    -disabled属性： 是否禁用  （不设置disabled属性就是可用enabled）</p>
-<p>​                                    -maxlength属性：设置最大字符数</p>
-<p>​                                    -placeholder属性：设置占位符（文本提示）</p>
-<p>​                                    -autocomplete属性：是否自动提示框 on|off</p>
-<p>​                            -passworld 密码框</p>
-<p>​                            -file 文件域（上传）</p>
-<p>​                            -hidden 隐藏域 (商品编号隐藏发送，不让用户看到的数据)</p>
-<p>​                            -radio 单选按钮</p>
-<p>​                                如果希望一组单选按钮是互斥的，需要设置</p>
-<p>​                                单选按钮的属性 name的名称一致</p>
-<p>​                                    -checked属性 ：设置是否被选中</p>
-<p>​                                    checked = “checked”</p>
-<p>​                                    标签中如果某个属性的名称和值是一致的</p>
-<p>​                                    可以只写属性名称，不推荐</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;male&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;female&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">checked</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​                            </p>
-<p>​                            -checkbox  复选框</p>
-<p>​                            -submit  提交按钮</p>
-<p>​                                                        value属性：设置按钮的文本</p>
-<p>​                                                        当点击提交按钮时，将整个表单的                                    数据提交到action指定的服务器</p>
-<p>​                            -reset 重置按钮 </p>
-<p>​                                        value属性：设置按钮的文本                            -image 图像按钮</p>
-<p>​                                            src属性：设置图像的路径                </p>
-<p>​                            -button 普通</p>
-<p>​                                        value属性：设置按钮的文本</p>
-<p>​                            -date 日期选择器（了解）</p>
-<p>​                                        通常使用第三方</p>
-<p>​                            -email 邮件输入框    </p>
-<p>​                                        对邮件地址的格式做初级判断</p>
-<p>​                            -number 数字选择器</p>
-<p>​                                            value设置值</p>
-<p>​                                            max设置最大值</p>
-<p>​                                            min设置最小值</p>
-<p>​                                            step设置步长</p>
-<p>​                            -color 颜色选择器</p>
-<h3 id="1-3-2-下拉列表（下拉框）"><a href="#1-3-2-下拉列表（下拉框）" class="headerlink" title="1.3.2 下拉列表（下拉框）"></a>1.3.2 下拉列表（下拉框）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-3-3多行文本框"><a href="#1-3-3多行文本框" class="headerlink" title="1.3.3多行文本框"></a>1.3.3多行文本框</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span> 	</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二、CSS层叠样式表"><a href="#二、CSS层叠样式表" class="headerlink" title="二、CSS层叠样式表"></a>二、CSS层叠样式表</h1><h2 id="2-1CSS样式表的语法"><a href="#2-1CSS样式表的语法" class="headerlink" title="2.1CSS样式表的语法"></a>2.1CSS样式表的语法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    样式的属性名称: 样式的值;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>选择器：选取网页中需要添加样式的元素（标签）</p>
-<p>样式的属性： </p>
-<p>​                字体样式   </p>
-<p>​                        -  color: 设置字体颜色 </p>
-<p>​                                    值:   颜色的单词（学习期间用）</p>
-<p>​                                            颜色的十六进制（大多数公司的用法）</p>
-<p>​                                            rgb()  三原色函数（部分公司）</p>
-<h2 id="2-2-基本选择器"><a href="#2-2-基本选择器" class="headerlink" title="2.2 基本选择器"></a>2.2 基本选择器</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 通配符选择器  选择出所有标签，学习期间中使用，开发中不使用，效率低</span><br><span class="line"><span class="selector-id">#id</span>  id选择器   类似vip定制衣服 选择出指定id属性的值的标签</span><br><span class="line">标签名称  标签选择器   类似校服  选出某种名称的所有标签</span><br><span class="line">.类名   类名选择器  类似专卖店  通过标签的class属性</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-HTML网页如何引入CSS技术"><a href="#2-3-HTML网页如何引入CSS技术" class="headerlink" title="2.3 HTML网页如何引入CSS技术"></a>2.3 HTML网页如何引入CSS技术</h2><h2 id="2-3-1-行内样式表"><a href="#2-3-1-行内样式表" class="headerlink" title="2.3.1 行内样式表"></a>2.3.1 行内样式表</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;标签 style=&quot;样式属性名称: 属性的值<span class="string">&quot;&gt;&lt;/标签&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">优点：样式的目标非常明确</span></span><br><span class="line"><span class="string">缺点：HTML代码和CSS代码杂糅了，没有分离，不好维护，不推荐使用</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-3-2内部样式表"><a href="#2-3-2内部样式表" class="headerlink" title="2.3.2内部样式表"></a>2.3.2内部样式表</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">			css语句</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">优点：<span class="selector-tag">HTML</span>代码和CSS代码分离，好维护</span><br><span class="line">缺点：内部样式表只能针对当前页面，其他页面无法共享样式表</span><br></pre></td></tr></table></figure>
-
-<p>补充：CSS代码段部分注释 /*  注释内容   */</p>
-<p>​            HTML代码部分注释 &lt;!–  注释内容 –&gt;</p>
-<p>​            JavaScript代码部分注释  // 单行注释  和  /*  注释内容   */多行注释 </p>
-<p>通配符选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 内部样式表 */</span></span><br><span class="line"><span class="comment">/* 通配符选择器,不推荐使用 */</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;   <span class="comment">/* 设置文本的颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>标签选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标签选择器 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: mediumblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>id选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* id选择器 */</span></span><br><span class="line"><span class="selector-id">#firstH1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: crimson;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="一、常用的CSS样式属性"><a href="#一、常用的CSS样式属性" class="headerlink" title="一、常用的CSS样式属性"></a>一、常用的CSS样式属性</h1><p>font-style: 设置字体的类型</p>
+<p>​            normal: 正体字（默认值）</p>
+<p>​            italic： 斜体字</p>
+<p>font-weight: 设置字体的粗细</p>
+<p>​               normal: 400  默认值 | bold | bolder | lighter</p>
+<p>​                100~900</p>
+<p>font-size: 设置字体大小</p>
+<p>​                像素</p>
+<p>line-height: 设置字体的行高</p>
+<p>font-family : 设置字体的家族</p>
+<p>​        “Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif”;</p>
+<p>子属性的设置，可以通过父属性一次性设置，font有顺序要求</p>
+<p>font: italic  600 12px/18px 宋体; </p>
+<p>text-decoration: 字体装饰样式（通常给超链接用）</p>
+<ul>
+<li>none   默认值 无装饰（通常将超链接下划线去掉）</li>
+<li>underline   下划线</li>
+<li>overline  上划线</li>
+<li>line-through  删除线</li>
+</ul>
+<p>text-indent：设置段落缩进样式</p>
+<p>​            2em : 向右缩进两个字符</p>
+<p>text-align: 设置文本在水平方向上的对齐方式</p>
+<p>​            left ： 默认值   左对齐</p>
+<p>​            right : 右对齐</p>
+<p>​            center： 居中对齐</p>
+<p>background: 设置背景的样式</p>
+<p>​        background-color: 设置背景颜色</p>
+<p>​        background-image: 设置背景图片</p>
+<p>​        background-repeat: 设置背景图片的平铺方式</p>
+<p>​                    repeat：x、y方向都会平铺   默认值</p>
+<p>​                    no-repeat: 不平铺   最常用</p>
+<p>​                    repeat-x:  x方向都会平铺 </p>
+<p>​                    repeat-y:  y方向都会平铺</p>
+<h1 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h1><p>盒子模型用于布局，通过下面4类样式来设计盒子模型</p>
+<p>​        内容：     </p>
+<p>​                    width： 设置盒子的宽度</p>
+<p>​                    height:  设置盒子的高度</p>
+<p>​        边框： </p>
+<p>​                    border : 设置盒子的边框样式</p>
+<p>​                            border-width: 设置边框的粗细， 通常使用像素</p>
+<p>​                            border-color: 设置边框的颜色</p>
+<p>​                            上面两个子属性必须配合border-style属性使用</p>
+<p>​                            border-style: 设置边框的类型        </p>
+<p>​                                                none : 没有边框 默认值</p>
+<p>​                                                solid: 实线</p>
+<p>​                                                dashed：虚线</p>
+<p>​                            border：可以设置四个方向的样式</p>
+<p>​                                        border-top</p>
+<p>​                                        border-right</p>
+<p>​                                        border-bottom</p>
+<p>​                                        border-left</p>
+<p>​                                    </p>
+<p>​            内边距： 设置边框和内容之间的距离</p>
+<p>​                    padding(内补丁)： </p>
+<p>​                </p>
+<p>​        外边距： 设置盒子与盒子之间的距离</p>
+<p>​                  margin(外补丁)：</p>
+<p>​        </p>
+<h1 id="三、浮动布局（重点）"><a href="#三、浮动布局（重点）" class="headerlink" title="三、浮动布局（重点）"></a>三、浮动布局（重点）</h1><p>浮动布局：将文档流中的自然排序的块元素，变为横向多列布局</p>
+<p>float: left  |  right</p>
+<p>浮动的盒子的特点</p>
+<ol>
+<li>浮动的盒子不再占据文档流整个一行</li>
+</ol>
+<p> 2 .浮动的盒子对后面让在文档中的盒子有影响：浮动的盒子脱离了文档流，原本的位置不再占据，后面的盒子会自动补位</p>
+<p>如果在文档流中的盒子不希望受浮动盒子的影响（被遮住）,</p>
+<p>可以设置CSS属性</p>
+<p>clear: left | right |both</p>
+<p>边框塌陷问题：子盒子影响自适应高度的父盒子</p>
+<p>​        本身在文档流中的子盒子，如果有高度，它是占据这个高度</p>
+<p>父盒子采用自适应子盒子高度，父盒子高度由最高子盒子高度决定</p>
+<p>但是一旦子盒子浮动，脱离了文档流，原本的位置不再占据，自适应高度的</p>
+<p>父盒子高度变为0， 父盒子后面的盒子会占据原本父盒子的位置。</p>
+<p>​    解决父盒子边框塌陷问题：</p>
+<p>​    方式一：给父盒子固定高度，不推荐使用，不灵活</p>
+<p>​    方式二： 在父盒子内的后面加一个内容为空的div，让这个div清除浮动</p>
+<p>​                    也不推荐，添加了一个没有太多作用的div</p>
+<p>​    方式三： 给父盒子添加属性 overflow: hidden; 也不推荐使用，</p>
+<p>​                    因为overflow: hidden；还有一个主要作用，超出父盒子的内容会被隐藏。</p>
+<p>​    方式四： 使用伪类（CSS2） | 伪元素(CSS3) ，主流开发的方式</p>
+<p>​        本质上就是第二种，但是因为使用的是伪类，并没有产生无效的div</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">&quot;.&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="2-3-3-外部样式表"><a href="#2-3-3-外部样式表" class="headerlink" title="2.3.3 外部样式表"></a>2.3.3 外部样式表</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;link href=&quot;外部样式表的路径&quot;/&gt;   -- 引入外部样式文件 *<span class="selector-class">.css</span></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">优点：</span><br><span class="line">	<span class="selector-tag">HTML</span>和CSS分离，好维护</span><br><span class="line">	可以多个网页共享同一个样式表</span><br><span class="line">缺点：</span><br><span class="line">	外部样式表可能会样式层叠</span><br></pre></td></tr></table></figure>
 
 
-
-<p>CSS 引入的优先级（就近原则）</p>
-<p>行内&gt;内部&gt;外部</p>
-<p>选择器的优先级（选择器的权重）</p>
-<p>id选择器&gt;类选择器&gt;标签选择器</p>
+<p>CSS样式：</p>
+<p>​        display: 设置元素的显示模式</p>
+<p>​                块级元素： display属性默认是 block     p  div</p>
+<p>​                    display: block;     以块级元素显示</p>
+<p>​                行内元素： display属性默认是 inline   span</p>
+<p>​                    display: inline;     以行内元素显示</p>
 
                 
             </div>
@@ -599,7 +591,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/16/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE-1/">https://shujian2022.github.io/2022/03/16/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE-1/</a>
+                    <a href="https://shujian2022.github.io/2022/03/17/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">https://shujian2022.github.io/2022/03/17/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,8 +629,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
-                                    <span class="chip bg-color">HTML常用标签</span>
+                                <a href="/tags/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
+                                    <span class="chip bg-color">常用CSS样式属性</span>
                                 </a>
                             
                         </div>
@@ -816,13 +808,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/03/17/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
+                <a href="/2022/03/18/CSS%E5%AE%9A%E4%BD%8D%E5%B8%83%E5%B1%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="常用CSS样式属性">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="CSS定位布局">
                         
-                        <span class="card-title">常用CSS样式属性</span>
+                        <span class="card-title">CSS定位布局</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -833,7 +825,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-18
                         </span>
                         <span class="publish-author">
                             
@@ -846,8 +838,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B8%B8%E7%94%A8CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
-                        <span class="chip bg-color">常用CSS样式属性</span>
+                    <a href="/tags/CSS%E8%A1%A5%E5%85%85/">
+                        <span class="chip bg-color">CSS补充</span>
                     </a>
                     
                 </div>
@@ -861,7 +853,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/15/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+                <a href="/2022/03/16/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE-1/">
                     <div class="card-image">
                         
                         
@@ -878,7 +870,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
                             </span>
                         <span class="publish-author">
                             
@@ -891,8 +883,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML%E6%A6%82%E8%BF%B0/">
-                        <span class="chip bg-color">HTML概述</span>
+                    <a href="/tags/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+                        <span class="chip bg-color">HTML常用标签</span>
                     </a>
                     
                 </div>
