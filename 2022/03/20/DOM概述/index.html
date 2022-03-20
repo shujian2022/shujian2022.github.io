@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript概述, 弱翁茶馆">
-    <meta name="description" content="一、JavaScript## 1.1 JavaScript概述
-
-​        JavaScript是一种脚本语言，JavaScript可以运行在浏览器或者nodejs服务器这些支持JavaScript规范的运行环境中
-​      J">
+    <meta name="keywords" content="DOM概述, 弱翁茶馆">
+    <meta name="description" content="一、JavaScript DOM1.1 DOM概述DOM： 文档对象模型，当网页文档加载到浏览器内存时，浏览器会为文档生成一个对应的文档对象，
+同时会解析这个文档中的所有内容，所有的成分都是一个节点，每个节点都是一个对象。
+DOM 是这样规">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript概述 | 弱翁茶馆</title>
+    <title>DOM概述 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript概述</h1>
+                    <h1 class="description center-align post-title">DOM概述</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
+                                <span class="chip bg-color">DOM概述</span>
                             </a>
                         
                     </div>
@@ -449,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-20
                 </div>
                 
 
@@ -470,69 +469,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、JavaScript"><a href="#一、JavaScript" class="headerlink" title="一、JavaScript"></a>一、JavaScript</h1><pre><code>## 1.1 JavaScript概述
+                <h1 id="一、JavaScript-DOM"><a href="#一、JavaScript-DOM" class="headerlink" title="一、JavaScript DOM"></a>一、JavaScript DOM</h1><h2 id="1-1-DOM概述"><a href="#1-1-DOM概述" class="headerlink" title="1.1 DOM概述"></a>1.1 DOM概述</h2><p>DOM： 文档对象模型，当网页文档加载到浏览器内存时，浏览器会为文档生成一个对应的文档对象，</p>
+<p>同时会解析这个文档中的所有内容，所有的成分都是一个节点，每个节点都是一个对象。</p>
+<p>DOM 是这样规定的：</p>
+<ul>
+<li>整个文档是一个文档节点</li>
+<li>每个 XML 标签是一个元素节点</li>
+<li>包含在 XML 元素中的文本是文本节点</li>
+<li>每一个 XML 属性是一个属性节点</li>
+<li>注释属于注释节点</li>
+</ul>
+<p>补充：</p>
+<p>XML文档： 可扩展标记语言， 这种文档以标签来描述数据的，而且可以自定义标签</p>
+<p>HTML文档： 超文本标记语言，它是XML的子集，不能自定义标签</p>
+<h2 id="1-2-节点树"><a href="#1-2-节点树" class="headerlink" title="1.2 节点树"></a>1.2 节点树</h2><p>DOM文档会被浏览器解析为一个节点树，节点之间有等级关系：</p>
+<p>父、子和同级节点用于描述这种关系。父节点拥有子节点，位于相同层级上的子节点称为同级节点（兄弟或姐妹）。</p>
+<ul>
+<li>在节点树中，顶端的节点成为根节点</li>
+<li>根节点之内的每个节点都有一个父节点</li>
+<li>节点可以有任何数量的子节点</li>
+<li>叶子是没有子节点的节点</li>
+<li>同级节点是拥有相同父节点的节点</li>
+</ul>
+<h2 id="1-3-访问节点"><a href="#1-3-访问节点" class="headerlink" title="1.3 访问节点"></a>1.3 访问节点</h2><p>XML DOM：HTMLCollection getElementsByTagName()  根据标签的名称可以获取到DOM节点集合，HTML DOM 继承了</p>
+<p>每个节点都是Node的对象，每个节点对象都有nodeName、nodeValue、nodeType属性</p>
+<p>​        </p>
+<p>元素节点的三个属性的值是什么： </p>
+<p>​        访问方式： document.getElementsByTagName     parentNode   firstChild  lastChild   childNodes</p>
+<p>​        nodeName:  标签名</p>
+<p>​        nodeType:  1</p>
+<p>​        nodeValue： null</p>
+<p>属性节点的三个属性的值是什么： </p>
+<p>​        访问方式： 元素节点.getAttribute(“属性名称”)</p>
+<p>​        nodeName:  属性名称</p>
+<p>​        nodeType:   2</p>
+<p>​        nodeValue： 属性的值</p>
+<p>文本节点的三个属性的值是什么： </p>
+<p>​        访问方式： 元素节点.textContent(文本内容) 、  firstChild</p>
+<p>​        nodeName:  #text 固定</p>
+<p>​        nodeType:   3</p>
+<p>​        nodeValue： 文本内容本身</p>
+<p>注释节点：</p>
+<p>​        访问方式： </p>
+<p>​        nodeName:  #comment  固定</p>
+<p>​        nodeType:   8</p>
+<p>​        nodeValue： null</p>
+<p>文档节点的三个属性的值是什么： </p>
+<p>​        访问方式： document 对象</p>
+<p>​        nodeName: #document   固定的</p>
+<p>​        nodeType:  9</p>
+<p>​        nodeValue： null</p>
+<h2 id="1-4-HTML-DOM-常用属性和方法"><a href="#1-4-HTML-DOM-常用属性和方法" class="headerlink" title="1.4 HTML DOM 常用属性和方法"></a>1.4 HTML DOM 常用属性和方法</h2><p>​    Node节点对象</p>
+<pre><code>    Element元素节点对象
 </code></pre>
-<p>​        JavaScript是一种脚本语言，JavaScript可以运行在浏览器或者nodejs服务器这些支持JavaScript规范的运行环境中</p>
-<p>​      JavaScript是一种轻量级的、弱类型、解释型编程语言</p>
-<h2 id="1-2-JavaScript的组成部分"><a href="#1-2-JavaScript的组成部分" class="headerlink" title="1.2 JavaScript的组成部分"></a>1.2 JavaScript的组成部分</h2><h3 id="1-2-1-ECMAScript"><a href="#1-2-1-ECMAScript" class="headerlink" title="1.2.1 ECMAScript"></a>1.2.1 ECMAScript</h3><p>这个ECMA是欧洲计算机制造协会，对JavaScript的标准化进行规范：主要包括语法规范</p>
-<h3 id="1-2-2-DOM（Document-Object-Model）"><a href="#1-2-2-DOM（Document-Object-Model）" class="headerlink" title="1.2.2 DOM（Document  Object  Model）"></a>1.2.2 DOM（Document  Object  Model）</h3><p>​        DOM是文档对象模型，这种模型提供了相应的API用于操作HTML文档中的各个节点对象</p>
-<h3 id="1-2-3-BOM-Browser-Object-Model"><a href="#1-2-3-BOM-Browser-Object-Model" class="headerlink" title="1.2.3 BOM(Browser Object Model)"></a>1.2.3 BOM(Browser Object Model)</h3><p>​        BOM是浏览器对象模型，这个模型提供了相应的API用于操作浏览器各个的对象。</p>
-<h2 id="1-3-ECMAScript基础语法"><a href="#1-3-ECMAScript基础语法" class="headerlink" title="1.3 ECMAScript基础语法"></a>1.3 ECMAScript基础语法</h2><h3 id="1-3-1-如果在网页中引入JS脚本"><a href="#1-3-1-如果在网页中引入JS脚本" class="headerlink" title="1.3.1 如果在网页中引入JS脚本"></a>1.3.1 如果在网页中引入JS脚本</h3><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">方式一：</span><br><span class="line">在网页任意位置使用&lt;script&gt; js代码 &lt;/script&gt;</span><br><span class="line">通常会在&lt;head&gt;&lt;/head&gt;标签之间，但是有注意事项:需要注意浏览器解析的顺序</span><br><span class="line">以及&lt;body&gt;&lt;/body&gt;结束标签之前</span><br><span class="line"></span><br><span class="line">方式二：外部js文件</span><br><span class="line">可以使用&lt;script src=&quot;外部js文件的路径&quot;&gt;&lt;/script&gt;</span><br><span class="line">注意：一旦&lt;script&gt;&lt;/script&gt; 使用src属性引入了外部样式表，标签之间就不能在写js脚本代码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方式三：使用标签的事件属性关联JS代码</span><br><span class="line">&lt;标签 on事件名称=&quot;JS代码&quot;&gt;&lt;/标签&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-3-2-JavaScript语法"><a href="#1-3-2-JavaScript语法" class="headerlink" title="1.3.2 JavaScript语法"></a>1.3.2 JavaScript语法</h3><ol>
-<li><p>注释： </p>
-<p>​    单行注释：    // 注释内容</p>
-<p>​    多行注释：    /*   注释内容  */</p>
-</li>
-</ol>
-<ol start="2">
-<li><p>变量 </p>
-<p>​    变量的声明： var 变量名称;  </p>
-<p>​    使用var关键字声明的变量是一种全局变量，所以在现在的ECMA标准中不推荐使用</p>
-<p>​    建议使用 let | const 关键字来声明变量</p>
-</li>
-</ol>
-<ol start="3">
-<li>数据类型</li>
-</ol>
-<p>​        基本类型 ： </p>
-<p>​                            字符串（string）</p>
-<p>​                            数字(number)</p>
-<p>​                            布尔(boolean)</p>
-<p>​                            对空（null）</p>
-<p>​                            未定义（undefined）</p>
-<p>​                                    定义一个变量并没有进行初始化，此时变量的是undefined</p>
-<p>​                            typeof(变量名) 可以获取变量的类型</p>
-<p>​                            typeof 变量        可以获取变量的类型</p>
-<p>​            </p>
-<p>​        引用类型：</p>
-<p>​                        对象(Object)</p>
-<p>​                                    就是封装了属性和行为的实体</p>
-<p>​                                    var 对象 = {}；</p>
-<p>​                                    </p>
-<p>​                                    访问对象的属性</p>
-<p>​                                    对象.属性名   属性名必须符合标识符命名规则</p>
-<p>​                                    对象[‘属性名’]  </p>
-<p>​                                    JavaScript如果没有这个属性会自动创建</p>
-<p>​                    </p>
-<p>​                        函数(Function)</p>
-<p>​                                        函数：是实现某种特定功能的代码段</p>
-<p>​                            function 函数名(参数列表) {</p>
-<p>​                                    函数体</p>
-<p>​                            }</p>
-<p>​                            数组(Array)</p>
-<p>​                                        var 数组名 = [value1, value2, …];</p>
-<p>​                </p>
-<ol start="4">
-<li><p>for-in循环</p>
-<p>​    for(var 变量 in 数组|对象) {</p>
-<p>​    }</p>
-<p>如果是数组， for-in取出的是下标</p>
-<p>如果是对象， for-in取出的是对象的属性字符串，取出必须使用对象[属性字符串]</p>
-</li>
-</ol>
+<p>​        Attr属性节点对象</p>
+<p>​    元素节点 textContent属性可以设置或获取纯文本内容，HTML标签不会被浏览器解析</p>
+<p>​    createElement(‘元素名称’)  创建元素节点      这个方法继承自XML DOM</p>
+<p>​    appendChild(新的元素节点)   在某个元素节点内最后添加新的节点对象</p>
+<p>​    innerHTML属性： 设置或获取元素节点的文本内容，HTML标签会被浏览器解析</p>
+<p>​    getElementById()： 根据元素的Id获取元素对象</p>
+<p>​    getElementsByClassName() : 根据元素的class属性的值（类名）获取一组元素节点对象</p>
+<p>​    getElementsByTagName() : 根据标签名称获取一组元素节点对象</p>
+<p>​    getElementsByName() : 根据标签的name属性的值获取一组元素节点对象</p>
+<p>​    firstChild: 获取某个元素的第一个子节点</p>
+<p>​    replaceChild(新的节点, 旧的节点) : 用新的节点替换老节点  </p>
+<p>  ES6提供了新的API</p>
+<p>​    querySelector(’选择器‘) ： 根据指定的选择器获取第一个元素节点对象</p>
+<p>​    querySelectorAll(‘选择器’) ： 根据指定的选择器获取匹配的所有节点对象</p>
+<h3 id="1-5-DOM提供的9大内置对象"><a href="#1-5-DOM提供的9大内置对象" class="headerlink" title="1.5 DOM提供的9大内置对象"></a>1.5 DOM提供的9大内置对象</h3><p>Array内置对象： </p>
+<p>​        数组对象1.concat(数组对象2) ： 拼接数组并返回拼接后的新数组</p>
+<p>​        数组对象.join(‘连接符号’) : 将数组的元素用指定的连接字符串进行拼接，并返回拼接后的字符串</p>
+<p>​        数组对象.pop() : 删除并返回数组的最后一个元素</p>
+<p>​       数组对象.push(数据) : 向数组的末尾添加一个或更多元素，并返回新的长度</p>
+<p>​        数组对象.reverse() : 颠倒数组中元素的顺序。</p>
+<p>​    数组对象.shift() :  删除并返回数组的第一个元素</p>
+<p>​        数组对象.unshift() :  向数组的开头添加一个或更多元素，并返回新的长度</p>
+<p>​        数组对象.slice() : 可从已有的数组中返回选定的元素。</p>
+<p>​        数组对象.splice() : 可以删除元素和添加元素</p>
+<p>​        数组对象.sort()： 对数组的数据进行排序</p>
 
                 
             </div>
@@ -559,7 +573,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/19/JavaScript%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/03/19/JavaScript%E6%A6%82%E8%BF%B0/</a>
+                    <a href="https://shujian2022.github.io/2022/03/20/DOM%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/03/20/DOM%E6%A6%82%E8%BF%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,8 +611,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
+                                    <span class="chip bg-color">DOM概述</span>
                                 </a>
                             
                         </div>
@@ -772,9 +786,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/20/DOM%E6%A6%82%E8%BF%B0/">
                     <div class="card-image">
@@ -792,9 +807,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -803,6 +818,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -821,13 +837,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/18/CSS%E5%AE%9A%E4%BD%8D%E5%B8%83%E5%B1%80/">
+                <a href="/2022/03/19/JavaScript%E6%A6%82%E8%BF%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="CSS定位布局">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript概述">
                         
-                        <span class="card-title">CSS定位布局</span>
+                        <span class="card-title">JavaScript概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -838,7 +854,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                             </span>
                         <span class="publish-author">
                             
@@ -851,8 +867,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS%E8%A1%A5%E5%85%85/">
-                        <span class="chip bg-color">CSS补充</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
