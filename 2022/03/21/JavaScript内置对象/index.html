@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DOM概述, 弱翁茶馆">
-    <meta name="description" content="一、JavaScript DOM1.1 DOM概述DOM： 文档对象模型，当网页文档加载到浏览器内存时，浏览器会为文档生成一个对应的文档对象，
-同时会解析这个文档中的所有内容，所有的成分都是一个节点，每个节点都是一个对象。
-DOM 是这样规">
+    <meta name="keywords" content="JavaScript内置对象, 弱翁茶馆">
+    <meta name="description" content="一、JavaScript 内置对象1.1 Boolean创建Boolean对象的语法
+12new Boolean(value)  构造函数，将value转换为布尔值并返回一个对象Boolean(value)  转换函数，只将value转换为">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@ DOM 是这样规">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DOM概述 | 弱翁茶馆</title>
+    <title>JavaScript内置对象 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@ DOM 是这样规">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DOM概述</h1>
+                    <h1 class="description center-align post-title">JavaScript内置对象</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@ DOM 是这样规">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
-                                <span class="chip bg-color">DOM概述</span>
+                            <a href="/tags/Java-Script/">
+                                <span class="chip bg-color">Java Script</span>
                             </a>
                         
                     </div>
@@ -448,7 +447,7 @@ DOM 是这样规">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-20
+                    2022-03-21
                 </div>
                 
 
@@ -469,84 +468,95 @@ DOM 是这样规">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、JavaScript-DOM"><a href="#一、JavaScript-DOM" class="headerlink" title="一、JavaScript DOM"></a>一、JavaScript DOM</h1><h2 id="1-1-DOM概述"><a href="#1-1-DOM概述" class="headerlink" title="1.1 DOM概述"></a>1.1 DOM概述</h2><p>DOM： 文档对象模型，当网页文档加载到浏览器内存时，浏览器会为文档生成一个对应的文档对象，</p>
-<p>同时会解析这个文档中的所有内容，所有的成分都是一个节点，每个节点都是一个对象。</p>
-<p>DOM 是这样规定的：</p>
-<ul>
-<li>整个文档是一个文档节点</li>
-<li>每个 XML 标签是一个元素节点</li>
-<li>包含在 XML 元素中的文本是文本节点</li>
-<li>每一个 XML 属性是一个属性节点</li>
-<li>注释属于注释节点</li>
-</ul>
-<p>补充：</p>
-<p>XML文档： 可扩展标记语言， 这种文档以标签来描述数据的，而且可以自定义标签</p>
-<p>HTML文档： 超文本标记语言，它是XML的子集，不能自定义标签</p>
-<h2 id="1-2-节点树"><a href="#1-2-节点树" class="headerlink" title="1.2 节点树"></a>1.2 节点树</h2><p>DOM文档会被浏览器解析为一个节点树，节点之间有等级关系：</p>
-<p>父、子和同级节点用于描述这种关系。父节点拥有子节点，位于相同层级上的子节点称为同级节点（兄弟或姐妹）。</p>
-<ul>
-<li>在节点树中，顶端的节点成为根节点</li>
-<li>根节点之内的每个节点都有一个父节点</li>
-<li>节点可以有任何数量的子节点</li>
-<li>叶子是没有子节点的节点</li>
-<li>同级节点是拥有相同父节点的节点</li>
-</ul>
-<h2 id="1-3-访问节点"><a href="#1-3-访问节点" class="headerlink" title="1.3 访问节点"></a>1.3 访问节点</h2><p>XML DOM：HTMLCollection getElementsByTagName()  根据标签的名称可以获取到DOM节点集合，HTML DOM 继承了</p>
-<p>每个节点都是Node的对象，每个节点对象都有nodeName、nodeValue、nodeType属性</p>
-<p>​        </p>
-<p>元素节点的三个属性的值是什么： </p>
-<p>​        访问方式： document.getElementsByTagName     parentNode   firstChild  lastChild   childNodes</p>
-<p>​        nodeName:  标签名</p>
-<p>​        nodeType:  1</p>
-<p>​        nodeValue： null</p>
-<p>属性节点的三个属性的值是什么： </p>
-<p>​        访问方式： 元素节点.getAttribute(“属性名称”)</p>
-<p>​        nodeName:  属性名称</p>
-<p>​        nodeType:   2</p>
-<p>​        nodeValue： 属性的值</p>
-<p>文本节点的三个属性的值是什么： </p>
-<p>​        访问方式： 元素节点.textContent(文本内容) 、  firstChild</p>
-<p>​        nodeName:  #text 固定</p>
-<p>​        nodeType:   3</p>
-<p>​        nodeValue： 文本内容本身</p>
-<p>注释节点：</p>
-<p>​        访问方式： </p>
-<p>​        nodeName:  #comment  固定</p>
-<p>​        nodeType:   8</p>
-<p>​        nodeValue： null</p>
-<p>文档节点的三个属性的值是什么： </p>
-<p>​        访问方式： document 对象</p>
-<p>​        nodeName: #document   固定的</p>
-<p>​        nodeType:  9</p>
-<p>​        nodeValue： null</p>
-<h2 id="1-4-HTML-DOM-常用属性和方法"><a href="#1-4-HTML-DOM-常用属性和方法" class="headerlink" title="1.4 HTML DOM 常用属性和方法"></a>1.4 HTML DOM 常用属性和方法</h2><p>​    Node节点对象</p>
-<pre><code>    Element元素节点对象
-</code></pre>
-<p>​        Attr属性节点对象</p>
-<p>​    元素节点 textContent属性可以设置或获取纯文本内容，HTML标签不会被浏览器解析</p>
-<p>​    createElement(‘元素名称’)  创建元素节点      这个方法继承自XML DOM</p>
-<p>​    appendChild(新的元素节点)   在某个元素节点内最后添加新的节点对象</p>
-<p>​    innerHTML属性： 设置或获取元素节点的文本内容，HTML标签会被浏览器解析</p>
-<p>​    getElementById()： 根据元素的Id获取元素对象</p>
-<p>​    getElementsByClassName() : 根据元素的class属性的值（类名）获取一组元素节点对象</p>
-<p>​    getElementsByTagName() : 根据标签名称获取一组元素节点对象</p>
-<p>​    getElementsByName() : 根据标签的name属性的值获取一组元素节点对象</p>
-<p>​    firstChild: 获取某个元素的第一个子节点</p>
-<p>​    replaceChild(新的节点, 旧的节点) : 用新的节点替换老节点  </p>
-<p>  ES6提供了新的API</p>
-<p>​    querySelector(’选择器‘) ： 根据指定的选择器获取第一个元素节点对象</p>
-<p>​    querySelectorAll(‘选择器’) ： 根据指定的选择器获取匹配的所有节点对象</p>
-<h3 id="1-5-DOM提供的9大内置对象"><a href="#1-5-DOM提供的9大内置对象" class="headerlink" title="1.5 DOM提供的9大内置对象"></a>1.5 DOM提供的9大内置对象</h3><p>Array内置对象： </p>
-<p>​        数组对象1.concat(数组对象2) ： 拼接数组并返回拼接后的新数组</p>
-<p>​        数组对象.join(‘连接符号’) : 将数组的元素用指定的连接字符串进行拼接，并返回拼接后的字符串</p>
-<p>​        数组对象.pop() : 删除并返回数组的最后一个元素</p>
-<p>​       数组对象.push(数据) : 向数组的末尾添加一个或更多元素，并返回新的长度</p>
-<p>​        数组对象.reverse() : 颠倒数组中元素的顺序。</p>
-<p>​    数组对象.shift() :  删除并返回数组的第一个元素</p>
-<p>​        数组对象.unshift() :  向数组的开头添加一个或更多元素，并返回新的长度</p>
-<p>​        数组对象.slice() : 可从已有的数组中返回选定的元素。</p>
-<p>​        数组对象.splice() : 可以删除元素和添加元素</p>
-<p>​        数组对象.sort()： 对数组的数据进行排序</p>
+                <h1 id="一、JavaScript-内置对象"><a href="#一、JavaScript-内置对象" class="headerlink" title="一、JavaScript 内置对象"></a>一、JavaScript 内置对象</h1><h2 id="1-1-Boolean"><a href="#1-1-Boolean" class="headerlink" title="1.1 Boolean"></a>1.1 Boolean</h2><p>创建Boolean对象的语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Boolean</span>(value)  构造函数，将value转换为布尔值并返回一个对象</span><br><span class="line"><span class="title class_">Boolean</span>(value)  转换函数，只将value转换为布尔值，并返回这个原始值</span><br></pre></td></tr></table></figure>
+
+<p>0、-0、null、””、false、undefined 或 NaN  都会被转换为false，其他的都是true</p>
+<h2 id="1-2-Number对象"><a href="#1-2-Number对象" class="headerlink" title="1.2 Number对象"></a>1.2 Number对象</h2><p>Number 对象是原始数值的包装对象。</p>
+<p>创建Number对象的语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myNum=<span class="keyword">new</span> <span class="title class_">Number</span>(value);</span><br><span class="line"><span class="keyword">var</span> myNum=<span class="title class_">Number</span>(value);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>window对象有两个将字符串转为数字的方法</p>
+<p>parseInt() : </p>
+<p>parseFloat():</p>
+<h2 id="1-3-String-对象（不可变）"><a href="#1-3-String-对象（不可变）" class="headerlink" title="1.3 String 对象（不可变）"></a>1.3 String 对象（不可变）</h2><p>创建String对象的语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">String</span>(s);</span><br><span class="line"><span class="title class_">String</span>(s);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>String对象常用的属性和方法</p>
+<p>length属性： 获取字符串的长度</p>
+<p>charAt() :    用于获取指定下标的字符</p>
+<p>indexOf() : 获取指定字符在字符串中第一次出现的下标</p>
+<p>slice(start, end) : 截取子字符串  支持负数</p>
+<p>substr(start, length): 截取子字符串，从start开始的length个字符</p>
+<p>substring(start, end) : 截取子字符串</p>
+<p>split() 和 Array对象的 join() 方法是成对使用</p>
+<p>​            join(‘连接字符串’)     var names=[‘tom’, ‘mary’] </p>
+<p>​            names.join(‘_’) –&gt; 生成字符串    ‘tom_mary’</p>
+<p>split(‘分隔符’) ： 将字符串按照分隔符分割成数组</p>
+<p>跟正则表达式有关</p>
+<p>match() :</p>
+<p>replace() :</p>
+<p>search() :</p>
+<h2 id="1-4-RegExp-正则表达式对象"><a href="#1-4-RegExp-正则表达式对象" class="headerlink" title="1.4 RegExp 正则表达式对象"></a>1.4 RegExp 正则表达式对象</h2><p>创建正则表达式对象的方式</p>
+<p>方式一：直接量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/pattern/attributes</span><br></pre></td></tr></table></figure>
+
+<p>方式二： 构造方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">RegExp</span>(pattern, attributes);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>正则表达式对象</p>
+<p>test()方法  ： 正则表达式对象 校验字符串是否符合模式</p>
+<p>正则表达式的特殊符号</p>
+<p>[] 表示一个字符</p>
+<p>[0-9]  表示0-9之间的任意一个字符</p>
+<p>[a-z]  表示小写字母的任意一个字符</p>
+<p>[A-Za-z_0-9]</p>
+<p>[^]   表示一个字符，但不能是[]里面的</p>
+<p>[^0-9] 不是0-9之间的任意一个字符</p>
+<p>.    代表除了换行和行结束符的任意一个字符</p>
+<p>\d  等价 [0-9]</p>
+<p>\D  不能是数字的一个字符 </p>
+<p>正则表达式中表示数量词</p>
+<p>+修饰前面的这个字符串出现一次或者多次    &gt;=1</p>
+<p>*修饰前面的这个字符串出现零次或者多次   &gt;=0</p>
+<p>？修饰前面的这个字符串出现零次或者一次    0 || 1</p>
+<p>{n} 修饰前面的这个字符串出现n次</p>
+<p>{n,} 修饰前面的这个字符串出现&gt;=n次</p>
+<p>{n,m} 修饰前面的这个字符串出现&gt;=n &amp;&amp; &lt;=m次</p>
+<h2 id="1-5-Date对象"><a href="#1-5-Date对象" class="headerlink" title="1.5 Date对象"></a>1.5 Date对象</h2><p>Date 对象用于处理日期和时间</p>
+<p>创建日期对象的语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate=<span class="keyword">new</span> <span class="title class_">Date</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>getTime(): 可返回距 1970 年 1 月 1 日之间的毫秒数。</p>
+<p>getFullYear() : 获取年份</p>
+<p>getMonth() : 获取月份</p>
+<p>getDate() : 获取月的几号</p>
+<p>getHours() : 获取时</p>
+<p>getMinutes() : 获取分</p>
+<p>getSeconds():  获取秒</p>
+<h2 id="1-6-Math对象"><a href="#1-6-Math对象" class="headerlink" title="1.6 Math对象"></a>1.6 Math对象</h2><p>Math 对象用于执行数学任务。</p>
+<p>创建Math对象的语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.属性 | 方法</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Math中的常用方法</p>
+<p>ceil() : 天花板    向上取整</p>
+<p>floor(): 地板  向下取整</p>
+<p>random() : 获取0~1之间的随机小数</p>
+<h2 id="1-7-Event-对象"><a href="#1-7-Event-对象" class="headerlink" title="1.7 Event 对象"></a>1.7 Event 对象</h2><p>click： 点击事件</p>
+<p>onfocus： 获取焦点事件</p>
+<p>onblur: 失去焦点事件</p>
+<p>oninput:  输入事件</p>
+<p>onmouseover : 鼠标悬停事件</p>
+<p>onmouseout: 鼠标离开事件</p>
+<p>onmousemove: 鼠标移动事件</p>
 
                 
             </div>
@@ -573,7 +583,7 @@ DOM 是这样规">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/20/DOM%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/03/20/DOM%E6%A6%82%E8%BF%B0/</a>
+                    <a href="https://shujian2022.github.io/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">https://shujian2022.github.io/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,8 +621,8 @@ DOM 是这样规">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
-                                    <span class="chip bg-color">DOM概述</span>
+                                <a href="/tags/Java-Script/">
+                                    <span class="chip bg-color">Java Script</span>
                                 </a>
                             
                         </div>
@@ -786,9 +796,10 @@ DOM 是这样规">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">
                     <div class="card-image">
@@ -806,9 +817,9 @@ DOM 是这样规">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -817,6 +828,7 @@ DOM 是这样规">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -835,13 +847,13 @@ DOM 是这样规">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/19/JavaScript%E6%A6%82%E8%BF%B0/">
+                <a href="/2022/03/20/DOM%E6%A6%82%E8%BF%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript概述">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="DOM概述">
                         
-                        <span class="card-title">JavaScript概述</span>
+                        <span class="card-title">DOM概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -852,7 +864,7 @@ DOM 是这样规">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
                             </span>
                         <span class="publish-author">
                             
@@ -865,8 +877,8 @@ DOM 是这样规">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
+                        <span class="chip bg-color">DOM概述</span>
                     </a>
                     
                 </div>
