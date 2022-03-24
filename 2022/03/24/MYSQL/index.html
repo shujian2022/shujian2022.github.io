@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript内置对象, 弱翁茶馆">
-    <meta name="description" content="一、JavaScript 内置对象1.1 Boolean创建Boolean对象的语法
-12new Boolean(value)  构造函数，将value转换为布尔值并返回一个对象Boolean(value)  转换函数，只将value转换为">
+    <meta name="keywords" content="MYSQL, 弱翁茶馆">
+    <meta name="description" content="一、MySQL数据库1.1 MySQL数据库安装删除MySQL   卸载MySQL，并删除下面目中的MySQL配置
+C:\ProgramData\MySQL
+C:\Program Files\MySQL （或安装目录）
+1.2 MySQL安">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript内置对象 | 弱翁茶馆</title>
+    <title>MYSQL | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript内置对象</h1>
+                    <h1 class="description center-align post-title">MYSQL</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java-Script/">
-                                <span class="chip bg-color">Java Script</span>
+                            <a href="/tags/MYSQL/">
+                                <span class="chip bg-color">MYSQL</span>
                             </a>
                         
                     </div>
@@ -447,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-21
+                    2022-03-24
                 </div>
                 
 
@@ -468,95 +470,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、JavaScript-内置对象"><a href="#一、JavaScript-内置对象" class="headerlink" title="一、JavaScript 内置对象"></a>一、JavaScript 内置对象</h1><h2 id="1-1-Boolean"><a href="#1-1-Boolean" class="headerlink" title="1.1 Boolean"></a>1.1 Boolean</h2><p>创建Boolean对象的语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Boolean</span>(value)  构造函数，将value转换为布尔值并返回一个对象</span><br><span class="line"><span class="title class_">Boolean</span>(value)  转换函数，只将value转换为布尔值，并返回这个原始值</span><br></pre></td></tr></table></figure>
-
-<p>0、-0、null、””、false、undefined 或 NaN  都会被转换为false，其他的都是true</p>
-<h2 id="1-2-Number对象"><a href="#1-2-Number对象" class="headerlink" title="1.2 Number对象"></a>1.2 Number对象</h2><p>Number 对象是原始数值的包装对象。</p>
-<p>创建Number对象的语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myNum=<span class="keyword">new</span> <span class="title class_">Number</span>(value);</span><br><span class="line"><span class="keyword">var</span> myNum=<span class="title class_">Number</span>(value);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>window对象有两个将字符串转为数字的方法</p>
-<p>parseInt() : </p>
-<p>parseFloat():</p>
-<h2 id="1-3-String-对象（不可变）"><a href="#1-3-String-对象（不可变）" class="headerlink" title="1.3 String 对象（不可变）"></a>1.3 String 对象（不可变）</h2><p>创建String对象的语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">String</span>(s);</span><br><span class="line"><span class="title class_">String</span>(s);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>String对象常用的属性和方法</p>
-<p>length属性： 获取字符串的长度</p>
-<p>charAt() :    用于获取指定下标的字符</p>
-<p>indexOf() : 获取指定字符在字符串中第一次出现的下标</p>
-<p>slice(start, end) : 截取子字符串  支持负数</p>
-<p>substr(start, length): 截取子字符串，从start开始的length个字符</p>
-<p>substring(start, end) : 截取子字符串</p>
-<p>split() 和 Array对象的 join() 方法是成对使用</p>
-<p>​            join(‘连接字符串’)     var names=[‘tom’, ‘mary’] </p>
-<p>​            names.join(‘_’) –&gt; 生成字符串    ‘tom_mary’</p>
-<p>split(‘分隔符’) ： 将字符串按照分隔符分割成数组</p>
-<p>跟正则表达式有关</p>
-<p>match() :</p>
-<p>replace() :</p>
-<p>search() :</p>
-<h2 id="1-4-RegExp-正则表达式对象"><a href="#1-4-RegExp-正则表达式对象" class="headerlink" title="1.4 RegExp 正则表达式对象"></a>1.4 RegExp 正则表达式对象</h2><p>创建正则表达式对象的方式</p>
-<p>方式一：直接量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/pattern/attributes</span><br></pre></td></tr></table></figure>
-
-<p>方式二： 构造方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">RegExp</span>(pattern, attributes);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>正则表达式对象</p>
-<p>test()方法  ： 正则表达式对象 校验字符串是否符合模式</p>
-<p>正则表达式的特殊符号</p>
-<p>[] 表示一个字符</p>
-<p>[0-9]  表示0-9之间的任意一个字符</p>
-<p>[a-z]  表示小写字母的任意一个字符</p>
-<p>[A-Za-z_0-9]</p>
-<p>[^]   表示一个字符，但不能是[]里面的</p>
-<p>[^0-9] 不是0-9之间的任意一个字符</p>
-<p>.    代表除了换行和行结束符的任意一个字符</p>
-<p>\d  等价 [0-9]</p>
-<p>\D  不能是数字的一个字符 </p>
-<p>正则表达式中表示数量词</p>
-<p>+修饰前面的这个字符串出现一次或者多次    &gt;=1</p>
-<p>*修饰前面的这个字符串出现零次或者多次   &gt;=0</p>
-<p>？修饰前面的这个字符串出现零次或者一次    0 || 1</p>
-<p>{n} 修饰前面的这个字符串出现n次</p>
-<p>{n,} 修饰前面的这个字符串出现&gt;=n次</p>
-<p>{n,m} 修饰前面的这个字符串出现&gt;=n &amp;&amp; &lt;=m次</p>
-<h2 id="1-5-Date对象"><a href="#1-5-Date对象" class="headerlink" title="1.5 Date对象"></a>1.5 Date对象</h2><p>Date 对象用于处理日期和时间</p>
-<p>创建日期对象的语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate=<span class="keyword">new</span> <span class="title class_">Date</span>()</span><br></pre></td></tr></table></figure>
+                <h1 id="一、MySQL数据库"><a href="#一、MySQL数据库" class="headerlink" title="一、MySQL数据库"></a>一、MySQL数据库</h1><h2 id="1-1-MySQL数据库安装"><a href="#1-1-MySQL数据库安装" class="headerlink" title="1.1 MySQL数据库安装"></a>1.1 MySQL数据库安装</h2><p>删除MySQL   卸载MySQL，并删除下面目中的MySQL配置</p>
+<p>C:\ProgramData\MySQL</p>
+<p>C:\Program Files\MySQL （或安装目录）</p>
+<h2 id="1-2-MySQL安装"><a href="#1-2-MySQL安装" class="headerlink" title="1.2 MySQL安装"></a>1.2 MySQL安装</h2><p>安装的MySQL，本质上安装的是MySQL数据库管理系统（DataBase Management System），是一个系统级服务，这个服务默认监听3306端口</p>
+<p>MySQL安装的时候自带了一个命令行的控制台，也可以使用第三方客户端连接。</p>
+<h2 id="1-3-MySQL客户端"><a href="#1-3-MySQL客户端" class="headerlink" title="1.3 MySQL客户端"></a>1.3 MySQL客户端</h2><p>Navicat</p>
+<p>SQLYog</p>
+<h2 id="1-4-SQL语句"><a href="#1-4-SQL语句" class="headerlink" title="1.4 SQL语句"></a>1.4 SQL语句</h2><p>MySQL支持SQL语句，SQL语句是一种数据库脚本语言，Structure Query Language也是一种结构化查询语言。</p>
+<p>SQL语句由4部分组成</p>
+<p>DDL ： 数据定义语言     create       drop       alter    </p>
+<p>DML :  数据操作语言    insert     delete   update</p>
+<p>DQL :   数据查询语言   select </p>
+<p>DCL :    数据控制语言   grant</p>
+<h2 id="1-5-SQL常用命令"><a href="#1-5-SQL常用命令" class="headerlink" title="1.5 SQL常用命令"></a>1.5 SQL常用命令</h2><ol>
+<li><p>创建数据库</p>
+<p>​    create database [if not exists] `数据库名称`;    </p>
+</li>
+<li><p>删除数据库</p>
+<p>   drop database [if exists] 数据库名称;</p>
+</li>
+<li><p>显示当前数据库管理系统中的所有数据库</p>
+<p>  show databases;</p>
+</li>
+<li><p>切换数据库</p>
+<p>  use 数据库名称;</p>
+<ol start="5">
+<li> 创建数据表</li>
+</ol>
+<p>   表中的行： 记录   —- 对应的是一个实例的数据</p>
+<p>   表中的列： 字段   —- 对应的是这一类实体的属性</p>
+<pre><code>create table 表名(
+</code></pre>
+<p>   ​      字段名称1 数据类型 [特性],</p>
+<p>   ​      字段名称2  数据类型 [特性]</p>
+<p>   ​        ….    </p>
+<p>   );</p>
+<p>   常用的数据类型 </p>
+<p>   ​        int(长度)   默认11位</p>
+<p>   ​        varchar(长度)       长度可变字符串</p>
+<p>   ​        double(数据位,精度)   double(10, 2)</p>
+<p>   ​        datetime   日期</p>
+<p>   ​        </p>
+</li>
+</ol>
+<p>​            desc 表名;      显示表的创建结构</p>
+<p>​        特性： </p>
+<ol>
+<li><p>定义字段是否为空   null | not null</p>
+</li>
+<li><p>主键： 单列主键|多列主键  添加了主键约束的列称为主键列，</p>
+<p>主键约束是一种规则，这种规则可以保证数据的完整性</p>
+<p>添加了这种规则列，添加数据时不允许为空且唯一</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 单列主键</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	stu_id <span class="type">int</span> <span class="keyword">primary</span> key,</span><br><span class="line">    stu_name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 联合主键</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	stu_id <span class="type">int</span>, </span><br><span class="line">    stu_name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    stu_card_id <span class="type">int</span>,</span><br><span class="line">    <span class="keyword">primary</span> key(stu_id, stu_card_id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="3">
+<li>唯一约束： 可以允许为空，但是要求唯一</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 唯一约束</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	stu_id <span class="type">int</span> <span class="keyword">unique</span>,</span><br><span class="line">    stu_name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 
 
-<p>getTime(): 可返回距 1970 年 1 月 1 日之间的毫秒数。</p>
-<p>getFullYear() : 获取年份</p>
-<p>getMonth() : 获取月份</p>
-<p>getDate() : 获取月的几号</p>
-<p>getHours() : 获取时</p>
-<p>getMinutes() : 获取分</p>
-<p>getSeconds():  获取秒</p>
-<h2 id="1-6-Math对象"><a href="#1-6-Math对象" class="headerlink" title="1.6 Math对象"></a>1.6 Math对象</h2><p>Math 对象用于执行数学任务。</p>
-<p>创建Math对象的语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.属性 | 方法</span><br></pre></td></tr></table></figure>
+<p>4.默认约束： 给定一个默认值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 默认约束</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	stu_id <span class="type">int</span> <span class="keyword">unique</span>,</span><br><span class="line">    stu_name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    stu_gender <span class="type">char</span>(<span class="number">2</span>) <span class="keyword">default</span> <span class="string">&#x27;男&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 
 
-<p>Math中的常用方法</p>
-<p>ceil() : 天花板    向上取整</p>
-<p>floor(): 地板  向下取整</p>
-<p>random() : 获取0~1之间的随机小数</p>
-<h2 id="1-7-Event-对象"><a href="#1-7-Event-对象" class="headerlink" title="1.7 Event 对象"></a>1.7 Event 对象</h2><p>click： 点击事件</p>
-<p>onfocus： 获取焦点事件</p>
-<p>onblur: 失去焦点事件</p>
-<p>oninput:  输入事件</p>
-<p>onmouseover : 鼠标悬停事件</p>
-<p>onmouseout: 鼠标离开事件</p>
-<p>onmousemove: 鼠标移动事件</p>
+<p>5.自动增长（通常给主键）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 默认约束</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	stu_id <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    stu_name <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>6.外键约束： 多表关联的时候使用</p>
+<p>​        多表的关联关系        </p>
+<p>​                一对一    </p>
+<p>​                一对多（多对一）</p>
+<p>​                多对多</p>
+<p>​    外键约束是约束某个表单的某个字段，在输入数据必须来自某个表的主键字段，通常这个外键约束是存在多表中，也可以单表</p>
+<p>​    如果是多表，提供主键的表称为主表（父表）， 设置外键的表称为从表（子表），所以要求， 在创建表时，必须先创建主表，再创建从表，</p>
+<p>删除表时，必须先删除从表再删除主表。</p>
+<p>​            </p>
+<p>​        constraint 约束名称  foreign key(外键字段)</p>
+<p>​        reference 主键表名(主键字段)</p>
+<p>主键   pk_字段名</p>
+<p>外键  </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fk<span class="built_in">_</span>外键字段<span class="built_in">_</span>主键字段</span><br><span class="line"></span><br><span class="line">create table emp(</span><br><span class="line">	emp<span class="built_in">_</span>id int primary key auto<span class="built_in">_</span>increment,</span><br><span class="line">	emp<span class="built_in">_</span>name varchar(20) not null,</span><br><span class="line">	emp<span class="built_in">_</span>age int not null,</span><br><span class="line">	d<span class="built_in">_</span>id int,</span><br><span class="line"></span><br><span class="line">	CONSTRAINT fk<span class="built_in">_</span>dept<span class="built_in">_</span>id FOREIGN key(d<span class="built_in">_</span>id)</span><br><span class="line">	REFERENCES dept(dept<span class="built_in">_</span>id)</span><br><span class="line"></span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果有syntax …error字样表示语法错误</p>
 
                 
             </div>
@@ -583,7 +583,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">https://shujian2022.github.io/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</a>
+                    <a href="https://shujian2022.github.io/2022/03/24/MYSQL/">https://shujian2022.github.io/2022/03/24/MYSQL/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,8 +621,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java-Script/">
-                                    <span class="chip bg-color">Java Script</span>
+                                <a href="/tags/MYSQL/">
+                                    <span class="chip bg-color">MYSQL</span>
                                 </a>
                             
                         </div>
@@ -796,9 +796,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/24/MYSQL/">
                     <div class="card-image">
@@ -816,9 +817,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -827,6 +828,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -845,13 +847,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/20/DOM%E6%A6%82%E8%BF%B0/">
+                <a href="/2022/03/21/JavaScript%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="DOM概述">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript内置对象">
                         
-                        <span class="card-title">DOM概述</span>
+                        <span class="card-title">JavaScript内置对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -862,7 +864,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
                             </span>
                         <span class="publish-author">
                             
@@ -875,8 +877,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DOM%E6%A6%82%E8%BF%B0/">
-                        <span class="chip bg-color">DOM概述</span>
+                    <a href="/tags/Java-Script/">
+                        <span class="chip bg-color">Java Script</span>
                     </a>
                     
                 </div>
