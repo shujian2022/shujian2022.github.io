@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MYSQL数据库CRUD, 弱翁茶馆">
-    <meta name="description" content="一、MySQL数据库CRUD1.1CRUD对业务数据的增、删、改、查操作create 新增
-read  查询
-update 修改
-delete 删除
-对应的SQL语句
-1.2SQL增加数据的语法：1insert into 表名[(字段列表)">
+    <meta name="keywords" content="MYSQL数据库多表连接查询, 弱翁茶馆">
+    <meta name="description" content="一、MySQL数据库多表连接查询1.1 表的映射关系一对一 ：   实体A 和 实体B   是一种A只能关联一个B，B也只能关联一个A 
+​                    中国人和身份证
+一对多（多对一） ：   实体A关联多个实体">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ delete 删除
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MYSQL数据库CRUD | 弱翁茶馆</title>
+    <title>MYSQL数据库多表连接查询 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +311,12 @@ delete 删除
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MYSQL数据库CRUD</h1>
+                    <h1 class="description center-align post-title">MYSQL数据库多表连接查询</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +432,8 @@ delete 删除
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                <span class="chip bg-color">MYSQL数据库</span>
+                            <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
+                                <span class="chip bg-color">多表连接查询</span>
                             </a>
                         
                     </div>
@@ -451,7 +448,7 @@ delete 删除
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-25
+                    2022-03-28
                 </div>
                 
 
@@ -472,124 +469,25 @@ delete 删除
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、MySQL数据库CRUD"><a href="#一、MySQL数据库CRUD" class="headerlink" title="一、MySQL数据库CRUD"></a>一、MySQL数据库CRUD</h1><h2 id="1-1CRUD对业务数据的增、删、改、查操作"><a href="#1-1CRUD对业务数据的增、删、改、查操作" class="headerlink" title="1.1CRUD对业务数据的增、删、改、查操作"></a>1.1CRUD对业务数据的增、删、改、查操作</h2><p>create 新增</p>
-<p>read  查询</p>
-<p>update 修改</p>
-<p>delete 删除</p>
-<p>对应的SQL语句</p>
-<h2 id="1-2SQL增加数据的语法："><a href="#1-2SQL增加数据的语法：" class="headerlink" title="1.2SQL增加数据的语法："></a>1.2SQL增加数据的语法：</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名[(字段列表)] <span class="keyword">values</span>(值列表);</span><br></pre></td></tr></table></figure>
-
-<p>情况一：给指定的表中所有字段添加数据</p>
-<p>​            如果是主键且自动增长的列，可以不给该列显式赋值，也可以显式赋值：可以给自定义的值（不可以重复），也可以给null</p>
-<p>​          如果给表中的所有字段添加数据，数据列可以省略</p>
-<p>情况二： 给指定的表中部分字段添加数据</p>
-<p>​                部分字段必须显式指定字段列表    不允许为空的字段必须要填的，允许为空的或者有默认值的、自动增长的字段可以不填        </p>
-<p>​                如果指定的字段列表和值列表，字段列表和值列表只要一一对应，可以不和数据库中的列表顺序一致</p>
-<p>​        开发中: 即使在给所有字段添加数据时可以省略字段列表，但是建议显式给出你要添加的字段列表，可读性是很好的，而且SQL语句的性能要高</p>
-<h2 id="1-3-SQL语句删除数据的语法"><a href="#1-3-SQL语句删除数据的语法" class="headerlink" title="1.3 SQL语句删除数据的语法"></a>1.3 SQL语句删除数据的语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名 [<span class="keyword">where</span> 条件];   只删除表中的记录，不会删除表</span><br><span class="line"><span class="keyword">truncate</span> 表名;   将整张表删除，创建一个一模一样结构的新表</span><br></pre></td></tr></table></figure>
-
+                <h1 id="一、MySQL数据库多表连接查询"><a href="#一、MySQL数据库多表连接查询" class="headerlink" title="一、MySQL数据库多表连接查询"></a>一、MySQL数据库多表连接查询</h1><h2 id="1-1-表的映射关系"><a href="#1-1-表的映射关系" class="headerlink" title="1.1 表的映射关系"></a>1.1 表的映射关系</h2><p>一对一 ：   实体A 和 实体B   是一种A只能关联一个B，B也只能关联一个A </p>
+<p>​                    中国人和身份证</p>
+<p>一对多（多对一） ：   实体A关联多个实体B，而实体B只能属于一个实体A</p>
+<p>​                    班级和学生</p>
+<p>多对多：实体A关联多个实体B，实体B也关联多个实体A</p>
+<p>​                兴趣班和学生</p>
+<h2 id="1-2-多表的连接查询"><a href="#1-2-多表的连接查询" class="headerlink" title="1.2 多表的连接查询"></a>1.2 多表的连接查询</h2><h3 id="1-2-1-交叉连接（笛卡尔积）"><a href="#1-2-1-交叉连接（笛卡尔积）" class="headerlink" title="1.2.1 交叉连接（笛卡尔积）"></a>1.2.1 交叉连接（笛卡尔积）</h3><p>将实体A和实体B所有可能的组合查询出来</p>
+<h2 id="1-2-2-等值查询"><a href="#1-2-2-等值查询" class="headerlink" title="1.2.2 等值查询"></a>1.2.2 等值查询</h2><p>在笛卡尔集中，指定多表之间关联属性中， 符合值相等的记录查询出来</p>
+<h2 id="1-2-3-内连接查询"><a href="#1-2-3-内连接查询" class="headerlink" title="1.2.3 内连接查询"></a>1.2.3 内连接查询</h2><p>内连接查询 在查询结果上是和等值查询一致</p>
+<p>表1  inner join  表2 on 条件</p>
+<h2 id="1-2-4-外连接查询"><a href="#1-2-4-外连接查询" class="headerlink" title="1.2.4 外连接查询"></a>1.2.4 外连接查询</h2><p>左外连接</p>
+<p>左表  left join 右表  on </p>
+<p>​        以左边为主表，如果左边中的数据没有匹配 on 条件， 也会被查询出来</p>
+<p>右外连接</p>
+<p>​        以右边为主表，如果右边中的数据没有匹配 on 条件， 也会被查询出来</p>
+<h2 id="1-2-5-自然查询"><a href="#1-2-5-自然查询" class="headerlink" title="1.2.5 自然查询"></a>1.2.5 自然查询</h2><p>​    会自动以多表的相同名称的字段作为条件进行查询，所以不需要on</p>
+<p>​    natural， 只能使用在外连接 </p>
 <p>​    </p>
-<p>delete from 表名;     将表中的所有数据删除</p>
-<p>从表中的数据中将符合条件的数据都过滤掉</p>
-<p>[where 条件]   这是可选的，表示 where子句，可以设置的条件</p>
-<p>​                where子句可以用在delete、update、select中</p>
-<p>where 布尔值结果表达式</p>
-<p>布尔值结果表达式</p>
-<p>​    比较运算符   </p>
-<p>​                    = </p>
-<p>​                    !=（&lt;&gt;）</p>
-<p>​                    &gt;</p>
-<p>​                    &lt;</p>
-<p>​                    &gt;=</p>
-<p>​                    &lt;=</p>
-   <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.删除学号为10的学生信息</span></span><br><span class="line"><span class="comment">-- 执行流程：删除时</span></span><br><span class="line"><span class="comment">-- 从上往下一行行记录进行比较</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_id <span class="operator">=</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2.删除年龄大于等于30的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_age <span class="operator">&gt;=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3.删除学生地址为湘潭大学的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_addr <span class="operator">=</span> <span class="string">&#x27;湘潭大学&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 4.删除地址不为软件学院的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_addr <span class="operator">!=</span> <span class="string">&#x27;软件学院&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 5. 删除年龄在20~40之间学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student </span><br><span class="line"><span class="keyword">where</span> stu_age <span class="operator">&gt;=</span> <span class="number">20</span></span><br><span class="line"><span class="keyword">and</span> stu_age <span class="operator">&lt;=</span> <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 6.使用between and</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_age <span class="keyword">between</span> </span><br><span class="line"><span class="number">20</span> <span class="keyword">and</span> <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 7.删除学号为13或手机号码为</span></span><br><span class="line"><span class="comment">-- 2222的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_id <span class="operator">=</span> <span class="number">13</span> <span class="keyword">or</span> stu_mobile <span class="operator">=</span> <span class="number">2222</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 8.删除地址为null的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_addr <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 9.删除手机号不为空的学生信息</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_mobile <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>​        如果在where 子句中，需要和null进行判断</p>
-<p>​        不能使用 =   ！= </p>
-<p>​        而是使用  is null        is not null</p>
-<p>​    逻辑运算符</p>
-<p>​    and    逻辑与</p>
-<p>​     or     逻辑或</p>
-<p>​     not   逻辑非</p>
-<p>​    between    and    等价于  &gt;=  and  &lt;=</p>
-<h2 id="1-4-修改操作"><a href="#1-4-修改操作" class="headerlink" title="1.4  修改操作"></a>1.4  修改操作</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名 <span class="keyword">set</span> 字段<span class="number">1</span><span class="operator">=</span>新值,... [<span class="keyword">where</span> 条件];</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.修改所有学生的地址</span></span><br><span class="line"><span class="comment">-- 为&#x27;中南大学&#x27;</span></span><br><span class="line"><span class="keyword">update</span> student </span><br><span class="line"><span class="keyword">set</span> stu_addr<span class="operator">=</span><span class="string">&#x27;中南大学&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2.修改学号为10的学生地址</span></span><br><span class="line"><span class="comment">-- 为上海大学</span></span><br><span class="line"><span class="keyword">update</span> student </span><br><span class="line"><span class="keyword">set</span> stu_addr <span class="operator">=</span> <span class="string">&#x27;上海大学&#x27;</span></span><br><span class="line"><span class="keyword">where</span> stu_id <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改多个字段</span></span><br><span class="line"><span class="comment">-- 修改学号5~10学生的</span></span><br><span class="line"><span class="comment">-- 地址为&#x27;南京大学&#x27;和</span></span><br><span class="line"><span class="comment">-- 手机号码为&#x27;080-1179&#x27;</span></span><br><span class="line"><span class="keyword">update</span> student</span><br><span class="line"><span class="keyword">set</span> stu_addr <span class="operator">=</span> <span class="string">&#x27;南京大学&#x27;</span>,</span><br><span class="line">    stu_mobile <span class="operator">=</span> <span class="string">&#x27;080-1179&#x27;</span></span><br><span class="line"><span class="keyword">where</span> stu_id <span class="keyword">between</span> <span class="number">5</span> <span class="keyword">and</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> student </span><br><span class="line"><span class="keyword">set</span> stu_addr <span class="operator">=</span> <span class="string">&#x27;北京大学&#x27;</span></span><br><span class="line"><span class="keyword">where</span> stu_id <span class="operator">%</span> <span class="number">2</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-5-单表查询操作"><a href="#1-5-单表查询操作" class="headerlink" title="1.5 单表查询操作"></a>1.5 单表查询操作</h2><p>语法： </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表名</span><br><span class="line">[<span class="keyword">where</span> 子句]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span> 子句]</span><br><span class="line">[<span class="keyword">having</span> 子句]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span> 子句]</span><br><span class="line">[limit 子句]</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>select 字段列表 from 表名; 如果查询所有字段可以*通配符</p>
-</li>
-<li><p>select 指定的字段 from 表名;</p>
-</li>
-<li><p>别名： 可以给结果集中的字段名称设置别名</p>
-<p>​        select 字段名1 as 别名1, 字段名2 别名2… from 表名</p>
-</li>
-<li><p>where 子句： 从一组记录中筛选出符合条件的记录</p>
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.查询出所有学生所有信息</span></span><br><span class="line"><span class="keyword">select</span> stu_id, stu_name, stu_age, stu_mobile, stu_addr</span><br><span class="line"><span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2. 查询出所有学生指定的部分字段: 姓名和年龄</span></span><br><span class="line"><span class="comment">-- select语句查询出的结果称为结果集</span></span><br><span class="line"><span class="comment">-- select 除了可以查询出结果还是SQL语句的输出语句</span></span><br><span class="line"><span class="keyword">select</span> stu_name, stu_age <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> stu_name <span class="keyword">as</span> 学生姓名, stu_age 学生年龄</span><br><span class="line"><span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3.查询出学号在5~10学生姓名、手机号码信息</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">stu_name <span class="keyword">as</span> 姓名, stu_mobile <span class="keyword">as</span> 手机号码</span><br><span class="line"><span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_id <span class="operator">&gt;=</span> <span class="number">5</span> <span class="keyword">and</span> stu_id <span class="operator">&lt;=</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 4. 查询出地址为中南大学或者</span></span><br><span class="line"><span class="comment">-- 南京大学学生信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> stu_addr<span class="operator">=</span><span class="string">&#x27;中南大学&#x27;</span></span><br><span class="line"><span class="keyword">or</span> stu_addr<span class="operator">=</span><span class="string">&#x27;南京大学&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p>聚合函数： 可以获取组的信息，不是表中的业务数据，</p>
-<p>​            聚合函数的结果一定是单行单列的结果，所以不能和有多条记录的字段数据一起被查询出来</p>
-<p>​            count(*|字段名)    获取总记录数， 忽略空值  * 会看所有字段</p>
-<p>​            sum() 获取数据的总和  数值类型的字段</p>
-<p>​            avg()   获取数据的平均值，数值类型的字段</p>
-<p>​            max()  获取最大值  数值类型、日期的字段</p>
-<p>​            min() 获取最小值 数值类型、日期的字段</p>
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.count()聚合函数获取总记录数</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2.sum()聚合函数</span></span><br><span class="line"><span class="comment">-- 查询出年龄字段年龄总和</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(stu_age) <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3.avg() 聚合函数</span></span><br><span class="line"><span class="comment">-- 查询出平均年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(stu_age) <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 4.max() 聚合函数</span></span><br><span class="line"><span class="comment">-- 查询出最大年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(stu_age) <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 5.min()聚合函数</span></span><br><span class="line"><span class="comment">-- 查询出最小年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">min</span>(stu_age) <span class="keyword">from</span> student;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="5">
-<li>分组查询</li>
-</ol>
-<p>group by 字段1, 字段2…    根据指定的字段分组</p>
-<p>where 子句： 从记录中筛选出符合条件的记录</p>
-<p>group by子句 ： 将符合条件的记录再进行分组</p>
-<ol start="6">
-<li><p>having 子句： </p>
-<p>不能单独使用，需要配置group by子句使用筛选出符合条件的组</p>
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 分组后，筛选出人数&gt; 5的组</span></span><br><span class="line"><span class="keyword">select</span> stu_gender,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> stu_gender</span><br><span class="line"><span class="keyword">having</span> stu_gender<span class="operator">=</span><span class="string">&#x27;女&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="7">
-<li>order by 排序</li>
-</ol>
-<p>可以对上面语句删除出来的结果进行排序 </p>
-<p>语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 字段<span class="number">1</span>,... <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span>  </span><br></pre></td></tr></table></figure>
-
-<p>升序   asc     从小到大排序   </p>
-<p>降序  desc    从大到小排序</p>
-<p>默认是升序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按照单字段进行排序</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> stu_age <span class="keyword">asc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 按照多字段排序</span></span><br><span class="line"><span class="comment">-- 先按照年龄进行升序排序</span></span><br><span class="line"><span class="comment">-- 如果年龄相同，再按照</span></span><br><span class="line"><span class="comment">-- 学号降序排序</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> stu_age <span class="keyword">asc</span>,</span><br><span class="line">stu_id <span class="keyword">desc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 按照性别分组后，</span></span><br><span class="line"><span class="comment">-- 按照每组人数降序排序</span></span><br><span class="line"><span class="keyword">select</span> stu_gender,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> stu_gender</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 按照性别和学校分组</span></span><br><span class="line"><span class="comment">-- 筛选出组的总年龄&gt;20的组</span></span><br><span class="line"><span class="comment">-- 按照总年龄降序排序</span></span><br><span class="line"><span class="keyword">select</span> stu_gender,stu_addr,<span class="built_in">count</span>(<span class="operator">*</span>),<span class="built_in">sum</span>(stu_age) <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> stu_gender,stu_addr</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">sum</span>(stu_age) <span class="operator">&gt;</span> <span class="number">20</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">sum</span>(stu_age) <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="8">
-<li><p>limit 分页查询</p>
-<p>​        limit 起始索引,每页显示的记录数</p>
-</li>
-</ol>
-<p>​        总记录数 select count(*) from 表名;</p>
-<p>​        每页显示的记录数 ： pageSize (5);</p>
-<p>​        页码： pageNum  (从第一页开始)    </p>
-<p>​        表中记录的索引从 0开始    </p>
-<p>​                limit  (pageNum - 1) * pageSize, pageSize      </p>
-<p>​                limit 0, 5</p>
-<p>​                limit 5,5</p>
-<p>​                limit  10, 5</p>
+<h2 id="1-3-子查询"><a href="#1-3-子查询" class="headerlink" title="1.3 子查询"></a>1.3 子查询</h2><p>将一个查询语句嵌入到另一个查询语句中</p>
 
                 
             </div>
@@ -616,7 +514,7 @@ delete 删除
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/25/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93CRUD/">https://shujian2022.github.io/2022/03/25/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93CRUD/</a>
+                    <a href="https://shujian2022.github.io/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">https://shujian2022.github.io/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -654,8 +552,8 @@ delete 删除
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                    <span class="chip bg-color">MYSQL数据库</span>
+                                <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
+                                    <span class="chip bg-color">多表连接查询</span>
                                 </a>
                             
                         </div>
@@ -829,9 +727,10 @@ delete 删除
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
                     <div class="card-image">
@@ -849,9 +748,9 @@ delete 删除
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -860,6 +759,7 @@ delete 删除
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -878,13 +778,13 @@ delete 删除
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/24/MYSQL/">
+                <a href="/2022/03/25/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93CRUD/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="MYSQL">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="MYSQL数据库CRUD">
                         
-                        <span class="card-title">MYSQL</span>
+                        <span class="card-title">MYSQL数据库CRUD</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -895,7 +795,7 @@ delete 删除
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
                             </span>
                         <span class="publish-author">
                             
@@ -908,8 +808,8 @@ delete 删除
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MYSQL/">
-                        <span class="chip bg-color">MYSQL</span>
+                    <a href="/tags/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">MYSQL数据库</span>
                     </a>
                     
                 </div>
