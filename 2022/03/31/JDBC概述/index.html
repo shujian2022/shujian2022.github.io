@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MYSQL数据库多表连接查询, 弱翁茶馆">
-    <meta name="description" content="一、MySQL数据库多表连接查询1.1 表的映射关系一对一 ：   实体A 和 实体B   是一种A只能关联一个B，B也只能关联一个A 
-​                    中国人和身份证
-一对多（多对一） ：   实体A关联多个实体">
+    <meta name="keywords" content="JDBC概述, 弱翁茶馆">
+    <meta name="description" content="一、JDBC1.1 JDBC概述​    JDBC（Java Database Connectivity）Java数据库互联技术
+​        JDBC技术是Java提供的用于操作关系型数据库的一套规范，这套规范提供了标准API用于操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MYSQL数据库多表连接查询 | 弱翁茶馆</title>
+    <title>JDBC概述 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MYSQL数据库多表连接查询</h1>
+                    <h1 class="description center-align post-title">JDBC概述</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
-                                <span class="chip bg-color">多表连接查询</span>
+                            <a href="/tags/JDBC/">
+                                <span class="chip bg-color">JDBC</span>
                             </a>
                         
                     </div>
@@ -448,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-03-31
                 </div>
                 
 
@@ -469,25 +468,83 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、MySQL数据库多表连接查询"><a href="#一、MySQL数据库多表连接查询" class="headerlink" title="一、MySQL数据库多表连接查询"></a>一、MySQL数据库多表连接查询</h1><h2 id="1-1-表的映射关系"><a href="#1-1-表的映射关系" class="headerlink" title="1.1 表的映射关系"></a>1.1 表的映射关系</h2><p>一对一 ：   实体A 和 实体B   是一种A只能关联一个B，B也只能关联一个A </p>
-<p>​                    中国人和身份证</p>
-<p>一对多（多对一） ：   实体A关联多个实体B，而实体B只能属于一个实体A</p>
-<p>​                    班级和学生</p>
-<p>多对多：实体A关联多个实体B，实体B也关联多个实体A</p>
-<p>​                兴趣班和学生</p>
-<h2 id="1-2-多表的连接查询"><a href="#1-2-多表的连接查询" class="headerlink" title="1.2 多表的连接查询"></a>1.2 多表的连接查询</h2><h3 id="1-2-1-交叉连接（笛卡尔积）"><a href="#1-2-1-交叉连接（笛卡尔积）" class="headerlink" title="1.2.1 交叉连接（笛卡尔积）"></a>1.2.1 交叉连接（笛卡尔积）</h3><p>将实体A和实体B所有可能的组合查询出来</p>
-<h2 id="1-2-2-等值查询"><a href="#1-2-2-等值查询" class="headerlink" title="1.2.2 等值查询"></a>1.2.2 等值查询</h2><p>在笛卡尔集中，指定多表之间关联属性中， 符合值相等的记录查询出来</p>
-<h2 id="1-2-3-内连接查询"><a href="#1-2-3-内连接查询" class="headerlink" title="1.2.3 内连接查询"></a>1.2.3 内连接查询</h2><p>内连接查询 在查询结果上是和等值查询一致</p>
-<p>表1  inner join  表2 on 条件</p>
-<h2 id="1-2-4-外连接查询"><a href="#1-2-4-外连接查询" class="headerlink" title="1.2.4 外连接查询"></a>1.2.4 外连接查询</h2><p>左外连接</p>
-<p>左表  left join 右表  on </p>
-<p>​        以左边为主表，如果左边中的数据没有匹配 on 条件， 也会被查询出来</p>
-<p>右外连接</p>
-<p>​        以右边为主表，如果右边中的数据没有匹配 on 条件， 也会被查询出来</p>
-<h2 id="1-2-5-自然查询"><a href="#1-2-5-自然查询" class="headerlink" title="1.2.5 自然查询"></a>1.2.5 自然查询</h2><p>​    会自动以多表的相同名称的字段作为条件进行查询，所以不需要on</p>
-<p>​    natural， 只能使用在外连接 </p>
-<p>​    </p>
-<h2 id="1-3-子查询"><a href="#1-3-子查询" class="headerlink" title="1.3 子查询"></a>1.3 子查询</h2><p>将一个查询语句嵌入到另一个查询语句中</p>
+                <h1 id="一、JDBC"><a href="#一、JDBC" class="headerlink" title="一、JDBC"></a>一、JDBC</h1><h2 id="1-1-JDBC概述"><a href="#1-1-JDBC概述" class="headerlink" title="1.1 JDBC概述"></a>1.1 JDBC概述</h2><p>​    JDBC（Java Database Connectivity）Java数据库互联技术</p>
+<p>​        JDBC技术是Java提供的用于操作关系型数据库的一套规范，这套规范提供了标准API用于操作实现了这套规范的数据库管理系统。</p>
+<h2 id="1-2-JDBC标准API"><a href="#1-2-JDBC标准API" class="headerlink" title="1.2 JDBC标准API"></a>1.2 JDBC标准API</h2><p>JDBC标签API基本都是在java.sql包下，其中最主要的几个接口：</p>
+<table>
+<thead>
+<tr>
+<th align="center">API</th>
+<th align="center">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">java.sql.DriverManager类</td>
+<td align="center">驱动管理器，用于构建数据库连接对象</td>
+</tr>
+<tr>
+<td align="center">java.sql.Connection 接口</td>
+<td align="center">建立与数据库连接的抽象方法</td>
+</tr>
+<tr>
+<td align="center">java.sql.Statement接口</td>
+<td align="center">用于与数据库进行SQL交互</td>
+</tr>
+<tr>
+<td align="center">java.sql.PreparedStatement接口</td>
+<td align="center">是Statement接口的子接口，用于与数据库进行SQL交互，可以进预编译SQL语句</td>
+</tr>
+<tr>
+<td align="center">java.sql.ResultSet接口</td>
+<td align="center">代表查询操作返回的结果集</td>
+</tr>
+</tbody></table>
+<h2 id="1-3-JDBC操作MySQL数据库的步骤"><a href="#1-3-JDBC操作MySQL数据库的步骤" class="headerlink" title="1.3 JDBC操作MySQL数据库的步骤"></a>1.3 JDBC操作MySQL数据库的步骤</h2><h3 id="1-3-1-导入数据库驱动并构建classpath路径"><a href="#1-3-1-导入数据库驱动并构建classpath路径" class="headerlink" title="1.3.1 导入数据库驱动并构建classpath路径"></a>1.3.1 导入数据库驱动并构建classpath路径</h3><p>创建Java程序，在工程目录下创建lib目标，这个目录主要用于存放第三方Jar包，这个目标必须添加的类路径下，因为所有的类的字节码文件需要在类路径下才能被加载器加载到内存中，才能被程序使用。</p>
+<p>###1.3.2 在程序中加载MySQL加驱动类</p>
+<p>com.mysql.jdbc.Driver类就是MySQL核心驱动类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3-3-建立数据库连接"><a href="#1-3-3-建立数据库连接" class="headerlink" title="1.3.3 建立数据库连接"></a>1.3.3 建立数据库连接</h3><p>​        使用JDBC提供的标准API  ： DriverManager驱动管理器类用于创建与数据库进行连接的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection DriverManager.getConnection(url, username, password);</span><br></pre></td></tr></table></figure>
+
+<p>​        根据指定的数据库服务访问路径，用户名, 密码来获取一个实现了Connection接口的实现对象（不需要关注）, 这个实现对象肯定实现了Connection接口中的所有抽象方法,所以Java程序只需要面向接口编程即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url的格式 ： jdbc:mysql:<span class="comment">//ip地址:端口号/数据库名称</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3-4-获取表达式对象"><a href="#1-3-4-获取表达式对象" class="headerlink" title="1.3.4    获取表达式对象"></a>1.3.4    获取表达式对象</h3><p>​    该对象是用于向数据库发送SQL指令，以及获取数据库返回的响应结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Statement 连接对象.createStatement();</span><br><span class="line">这个Statement接口不建议使用，这个接口的方法在传递SQL语句是，数据以拼接方式拼接到SQL语句中，存在SQL注入问题，另外这个接口在发送SQL语句时，不会进行预编译，而是直接发送个MySQL服务进行解析和处理，影响MySQL数据的性能。</span><br><span class="line">    </span><br><span class="line">PreparedStatement对象 ，</span><br><span class="line">    连接对象.prepareStatement(String sql):在构造这个对象时需要传入SQL语句，内部会对SQL语句进行预编译，并且数据不是以拼接的方式组织到SQL语句中，而是使用占位符的方式内部进行替换；然后将编译后的SQL语句再发送给MySQL服务，MySQL服务只需要执行执行指令即可，性能会高些</span><br></pre></td></tr></table></figure>
+
+<p>​    常用的方法</p>
+<p>executeUpdate():</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">executeUpdate</span><span class="params">(String sql)</span> : 增、删、改的通用方法，返回值是受影响的函数 </span><br></pre></td></tr></table></figure>
+
+<p>executeQuery():</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet <span class="title function_">executeQuery</span><span class="params">(String sql)</span> : 查询方法，返回值是ResultSet接口的实现对象，这个对象代表了查询的结果集</span><br></pre></td></tr></table></figure>
+
+<p>这个ResultSet接口有一些对结果集进行操作的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">next</span><span class="params">()</span>方法 判断是否能遍历到下一行记录，如果能返回<span class="literal">true</span>，否则返回<span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">Xxx <span class="title function_">getXxx</span><span class="params">(索引|列名)</span>: 可以获取当前行指定索引或列表的数据</span><br><span class="line">    		Xxx是Java的数据类型    </span><br><span class="line">    		Java的数据类型需要和MySQL数据库中的类型对应</span><br><span class="line">    		String          varchar <span class="type">char</span></span><br><span class="line">    		<span class="type">int</span>             <span class="type">int</span></span><br><span class="line">    		<span class="type">double</span>          <span class="type">double</span></span><br><span class="line">    		Date            date</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -514,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">https://shujian2022.github.io/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/</a>
+                    <a href="https://shujian2022.github.io/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,8 +609,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
-                                    <span class="chip bg-color">多表连接查询</span>
+                                <a href="/tags/JDBC/">
+                                    <span class="chip bg-color">JDBC</span>
                                 </a>
                             
                         </div>
@@ -727,9 +784,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/">
                     <div class="card-image">
@@ -747,9 +805,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -758,6 +816,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -776,13 +835,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/25/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93CRUD/">
+                <a href="/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="MYSQL数据库CRUD">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MYSQL数据库多表连接查询">
                         
-                        <span class="card-title">MYSQL数据库CRUD</span>
+                        <span class="card-title">MYSQL数据库多表连接查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -793,7 +852,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
                             </span>
                         <span class="publish-author">
                             
@@ -806,8 +865,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">MYSQL数据库</span>
+                    <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
+                        <span class="chip bg-color">多表连接查询</span>
                     </a>
                     
                 </div>
