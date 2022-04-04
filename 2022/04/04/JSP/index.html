@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JDBC概述, 弱翁茶馆">
-    <meta name="description" content="一、JDBC1.1 JDBC概述​    JDBC（Java Database Connectivity）Java数据库互联技术
-​        JDBC技术是Java提供的用于操作关系型数据库的一套规范，这套规范提供了标准API用于操作">
+    <meta name="keywords" content="JSP, 弱翁茶馆">
+    <meta name="description" content="一、JSP​    JSP（Java Server Page）： 是一种服务端的页面
+​    JSP = HTML + Java      在HTML页面中嵌入Java代码
+​    JSP本质： 就是Servlet，JSP会翻译为Ser">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JDBC概述 | 弱翁茶馆</title>
+    <title>JSP | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JDBC概述</h1>
+                    <h1 class="description center-align post-title">JSP</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JDBC/">
-                                <span class="chip bg-color">JDBC</span>
+                            <a href="/tags/JSP/">
+                                <span class="chip bg-color">JSP</span>
                             </a>
                         
                     </div>
@@ -447,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-04-04
                 </div>
                 
 
@@ -468,83 +469,79 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、JDBC"><a href="#一、JDBC" class="headerlink" title="一、JDBC"></a>一、JDBC</h1><h2 id="1-1-JDBC概述"><a href="#1-1-JDBC概述" class="headerlink" title="1.1 JDBC概述"></a>1.1 JDBC概述</h2><p>​    JDBC（Java Database Connectivity）Java数据库互联技术</p>
-<p>​        JDBC技术是Java提供的用于操作关系型数据库的一套规范，这套规范提供了标准API用于操作实现了这套规范的数据库管理系统。</p>
-<h2 id="1-2-JDBC标准API"><a href="#1-2-JDBC标准API" class="headerlink" title="1.2 JDBC标准API"></a>1.2 JDBC标准API</h2><p>JDBC标签API基本都是在java.sql包下，其中最主要的几个接口：</p>
-<table>
-<thead>
-<tr>
-<th align="center">API</th>
-<th align="center">用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">java.sql.DriverManager类</td>
-<td align="center">驱动管理器，用于构建数据库连接对象</td>
-</tr>
-<tr>
-<td align="center">java.sql.Connection 接口</td>
-<td align="center">建立与数据库连接的抽象方法</td>
-</tr>
-<tr>
-<td align="center">java.sql.Statement接口</td>
-<td align="center">用于与数据库进行SQL交互</td>
-</tr>
-<tr>
-<td align="center">java.sql.PreparedStatement接口</td>
-<td align="center">是Statement接口的子接口，用于与数据库进行SQL交互，可以进预编译SQL语句</td>
-</tr>
-<tr>
-<td align="center">java.sql.ResultSet接口</td>
-<td align="center">代表查询操作返回的结果集</td>
-</tr>
-</tbody></table>
-<h2 id="1-3-JDBC操作MySQL数据库的步骤"><a href="#1-3-JDBC操作MySQL数据库的步骤" class="headerlink" title="1.3 JDBC操作MySQL数据库的步骤"></a>1.3 JDBC操作MySQL数据库的步骤</h2><h3 id="1-3-1-导入数据库驱动并构建classpath路径"><a href="#1-3-1-导入数据库驱动并构建classpath路径" class="headerlink" title="1.3.1 导入数据库驱动并构建classpath路径"></a>1.3.1 导入数据库驱动并构建classpath路径</h3><p>创建Java程序，在工程目录下创建lib目标，这个目录主要用于存放第三方Jar包，这个目标必须添加的类路径下，因为所有的类的字节码文件需要在类路径下才能被加载器加载到内存中，才能被程序使用。</p>
-<p>###1.3.2 在程序中加载MySQL加驱动类</p>
-<p>com.mysql.jdbc.Driver类就是MySQL核心驱动类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-3-3-建立数据库连接"><a href="#1-3-3-建立数据库连接" class="headerlink" title="1.3.3 建立数据库连接"></a>1.3.3 建立数据库连接</h3><p>​        使用JDBC提供的标准API  ： DriverManager驱动管理器类用于创建与数据库进行连接的对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection DriverManager.getConnection(url, username, password);</span><br></pre></td></tr></table></figure>
-
-<p>​        根据指定的数据库服务访问路径，用户名, 密码来获取一个实现了Connection接口的实现对象（不需要关注）, 这个实现对象肯定实现了Connection接口中的所有抽象方法,所以Java程序只需要面向接口编程即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url的格式 ： jdbc:mysql:<span class="comment">//ip地址:端口号/数据库名称</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-3-4-获取表达式对象"><a href="#1-3-4-获取表达式对象" class="headerlink" title="1.3.4    获取表达式对象"></a>1.3.4    获取表达式对象</h3><p>​    该对象是用于向数据库发送SQL指令，以及获取数据库返回的响应结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Statement 连接对象.createStatement();</span><br><span class="line">这个Statement接口不建议使用，这个接口的方法在传递SQL语句是，数据以拼接方式拼接到SQL语句中，存在SQL注入问题，另外这个接口在发送SQL语句时，不会进行预编译，而是直接发送个MySQL服务进行解析和处理，影响MySQL数据的性能。</span><br><span class="line">    </span><br><span class="line">PreparedStatement对象 ，</span><br><span class="line">    连接对象.prepareStatement(String sql):在构造这个对象时需要传入SQL语句，内部会对SQL语句进行预编译，并且数据不是以拼接的方式组织到SQL语句中，而是使用占位符的方式内部进行替换；然后将编译后的SQL语句再发送给MySQL服务，MySQL服务只需要执行执行指令即可，性能会高些</span><br></pre></td></tr></table></figure>
-
-<p>​    常用的方法</p>
-<p>executeUpdate():</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">executeUpdate</span><span class="params">(String sql)</span> : 增、删、改的通用方法，返回值是受影响的函数 </span><br></pre></td></tr></table></figure>
-
-<p>executeQuery():</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet <span class="title function_">executeQuery</span><span class="params">(String sql)</span> : 查询方法，返回值是ResultSet接口的实现对象，这个对象代表了查询的结果集</span><br></pre></td></tr></table></figure>
-
-<p>这个ResultSet接口有一些对结果集进行操作的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">next</span><span class="params">()</span>方法 判断是否能遍历到下一行记录，如果能返回<span class="literal">true</span>，否则返回<span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">Xxx <span class="title function_">getXxx</span><span class="params">(索引|列名)</span>: 可以获取当前行指定索引或列表的数据</span><br><span class="line">    		Xxx是Java的数据类型    </span><br><span class="line">    		Java的数据类型需要和MySQL数据库中的类型对应</span><br><span class="line">    		String          varchar <span class="type">char</span></span><br><span class="line">    		<span class="type">int</span>             <span class="type">int</span></span><br><span class="line">    		<span class="type">double</span>          <span class="type">double</span></span><br><span class="line">    		Date            date</span><br></pre></td></tr></table></figure>
+                <h1 id="一、JSP"><a href="#一、JSP" class="headerlink" title="一、JSP"></a>一、JSP</h1><p>​    JSP（Java Server Page）： 是一种服务端的页面</p>
+<p>​    JSP = HTML + Java      在HTML页面中嵌入Java代码</p>
+<p>​    JSP本质： 就是Servlet，JSP会翻译为Servlet，在编译运行Servlet的service方法输出HTML到响应正文</p>
+<h1 id="二、JSP页面的组成部分"><a href="#二、JSP页面的组成部分" class="headerlink" title="二、JSP页面的组成部分"></a>二、JSP页面的组成部分</h1><ol>
+<li><p>HTML代码部分</p>
+<p>转为servlet中service方法的out.write(“HTML代码”);</p>
+</li>
+<li><p>JSP指令: 告诉JSP引擎如果处理JSP页面</p>
+<p>&lt;%@ 指令 属性=”值”… %&gt;</p>
+<p>&lt;%@ page  %&gt;</p>
+<p>​            contentTyep属性： 设置页面类型</p>
+<p>​            转为servlet： response.setContentType(“text/html;charset=UTF-8”);</p>
+<p>​            language=”java” 属性： 设置嵌入HTML的脚本的语言</p>
+<p>​            默认是Java</p>
+</li>
+<li><p>Java部分</p>
+<p> &lt;%</p>
+<p>​        Java代码</p>
+<p>%&gt;</p>
+<p>本质上就是在Servlet的service方式中写的Java代码</p>
+</li>
+</ol>
+<p>​    &lt;%= %&gt;  等价于print() 方法</p>
+<h1 id="三、MVC设计模式"><a href="#三、MVC设计模式" class="headerlink" title="三、MVC设计模式"></a>三、MVC设计模式</h1><p>​        上面讲的Java脚本并不是JSP的常规用法，因为JSP页面内如果编写了Java业务逻辑代码，不是很好维护，HTML代码和Java代码混杂了，如果HTML代码有修改，那么JSP必须等待前端修改完毕后才能去开发JSP页面。</p>
+<p>学习期间可以使用JSP做案例或项目，正常企业里中大型项目不再使用JSP，推荐前后端分离方式开发，提高开发效率以及降低维护成不。</p>
+<p>学习JSP通常会使用在MVC设计模式中充当View的角色，什么是MVC设计模式？</p>
+<h2 id="3-1-EL表达式"><a href="#3-1-EL表达式" class="headerlink" title="3.1 EL表达式"></a>3.1 EL表达式</h2><p>${EL表达式}  ： EL  expression language  </p>
+<p>${属性名称}</p>
+<p>重点： EL表达式从域对象中根据属性名称取出值，域对象从</p>
+<p>pageContext -&gt; requestScope -&gt; sessionScope -&gt; applicationScope</p>
+<p>顺序找key</p>
+<p>${1+1}  EL可以做一些简单运算</p>
+<h2 id="3-2-JSTL"><a href="#3-2-JSTL" class="headerlink" title="3.2 JSTL"></a>3.2 JSTL</h2><p>JSP  Standard Tag Library  : JSP 标准标签库</p>
+<p>使用JSTL，需要&lt;%@ taglib %&gt;指令，同时还需要导入Jar包</p>
+<p>​        prefix属性：设置前缀， 指定的前缀代表整个标签库</p>
+<p>​        uri属性： 设置标签库的资源路径</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;&quot;</span>&gt;&lt;/c:<span class="keyword">if</span>&gt;  判断test后面的表达式是否为<span class="literal">true</span>，如果为<span class="literal">true</span>，输出标签体的内容</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:foreach&gt;</span><br><span class="line">    	类似：<span class="keyword">for</span>(Student s : stus)</span><br><span class="line">    	items属性：设置需要遍历的集合（stus）</span><br><span class="line">    	<span class="keyword">var</span>属性： 设置变量，将从集合中取出的元素赋值的变量（s）</span><br><span class="line">    	该标签会将<span class="keyword">var</span>设置变量存入域对象中，所以可以使用EL表达式取出这个变量</span><br><span class="line">    	varStatus属性：设置状态变量，这个状态变量JSP自动产生，</span><br><span class="line">    	</span><br><span class="line">    </span><br><span class="line">   		$&#123;对象.属性名称&#125; 调用对象的属性对应的get方法取出并输出</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h1 id="四、案例"><a href="#四、案例" class="headerlink" title="四、案例"></a>四、案例</h1><ol>
+<li><p>采用三层架构设计程序架构</p>
+<p>表现层： MVC设计模式，主要用于与用户交互</p>
+<p>业务层 ： 处理具体业务</p>
+<p>数据访问层 ： 对数据库进行操作</p>
+</li>
+<li><p>数据库： MySQL关系型数据库</p>
+</li>
+<li><p>JDBC： 操作数据库</p>
+</li>
+</ol>
+<p>功能需求： </p>
+<p>​    图书管理系统 增、删、改、查功能</p>
+<p>定义存放实体类的包 （数据bean）</p>
+<p>com.xxx.pojo    |    com.xxx.beans     |       com.xxx.domain</p>
+<p>定义存放servlet的包（控制器）</p>
+<p>com.xxx.web.servlet  |   com.xxx.web.controller   </p>
+<p>定义存放业务层接口的包</p>
+<p>com.xxx.service</p>
+<p>定义存放业务层实现类的包</p>
+<p>com.xxx.service.impl</p>
+<p>定义存放dao层接口的包</p>
+<p>com.xxx.dao</p>
+<p>定义存放dao层接口实现类的包</p>
+<p>com.xxx.dao.impl</p>
+<p>定义存放测试类的包</p>
+<p>com.xxx.test</p>
+<p>定义存放工具类的包</p>
+<p>com.xxx.utils</p>
+<p>定义存放自定义异常类的包</p>
+<p>com.xxx.exceptions</p>
 
                 
             </div>
@@ -571,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/</a>
+                    <a href="https://shujian2022.github.io/2022/04/04/JSP/">https://shujian2022.github.io/2022/04/04/JSP/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -609,8 +606,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JDBC/">
-                                    <span class="chip bg-color">JDBC</span>
+                                <a href="/tags/JSP/">
+                                    <span class="chip bg-color">JSP</span>
                                 </a>
                             
                         </div>
@@ -784,9 +781,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/04/JSP/">
                     <div class="card-image">
@@ -804,9 +802,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -815,6 +813,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -833,13 +832,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/28/MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
+                <a href="/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MYSQL数据库多表连接查询">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="JDBC概述">
                         
-                        <span class="card-title">MYSQL数据库多表连接查询</span>
+                        <span class="card-title">JDBC概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,7 +849,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
                             </span>
                         <span class="publish-author">
                             
@@ -863,8 +862,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">
-                        <span class="chip bg-color">多表连接查询</span>
+                    <a href="/tags/JDBC/">
+                        <span class="chip bg-color">JDBC</span>
                     </a>
                     
                 </div>
