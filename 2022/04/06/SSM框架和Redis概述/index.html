@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JSP, 弱翁茶馆">
-    <meta name="description" content="一、JSP​    JSP（Java Server Page）： 是一种服务端的页面
-​    JSP = HTML + Java      在HTML页面中嵌入Java代码
-​    JSP本质： 就是Servlet，JSP会翻译为Ser">
+    <meta name="keywords" content="SSM框架何Redis概述, 弱翁茶馆">
+    <meta name="description" content="一、入门和技术基础1.SSM框架和Redis概述1.1 Spring框架spring官网：https://spring.io/
+https://img-blog.csdnimg.cn/11e569e4427a49ff8a246df6768a">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JSP | 弱翁茶馆</title>
+    <title>SSM框架何Redis概述 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JSP</h1>
+                    <h1 class="description center-align post-title">SSM框架何Redis概述</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JSP/">
-                                <span class="chip bg-color">JSP</span>
+                            <a href="/tags/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
+                                <span class="chip bg-color">SSM框架和Redis概述</span>
                             </a>
                         
                     </div>
@@ -448,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-04
+                    2022-04-06
                 </div>
                 
 
@@ -469,79 +468,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、JSP"><a href="#一、JSP" class="headerlink" title="一、JSP"></a>一、JSP</h1><p>​    JSP（Java Server Page）： 是一种服务端的页面</p>
-<p>​    JSP = HTML + Java      在HTML页面中嵌入Java代码</p>
-<p>​    JSP本质： 就是Servlet，JSP会翻译为Servlet，在编译运行Servlet的service方法输出HTML到响应正文</p>
-<h1 id="二、JSP页面的组成部分"><a href="#二、JSP页面的组成部分" class="headerlink" title="二、JSP页面的组成部分"></a>二、JSP页面的组成部分</h1><ol>
-<li><p>HTML代码部分</p>
-<p>转为servlet中service方法的out.write(“HTML代码”);</p>
-</li>
-<li><p>JSP指令: 告诉JSP引擎如果处理JSP页面</p>
-<p>&lt;%@ 指令 属性=”值”… %&gt;</p>
-<p>&lt;%@ page  %&gt;</p>
-<p>​            contentTyep属性： 设置页面类型</p>
-<p>​            转为servlet： response.setContentType(“text/html;charset=UTF-8”);</p>
-<p>​            language=”java” 属性： 设置嵌入HTML的脚本的语言</p>
-<p>​            默认是Java</p>
-</li>
-<li><p>Java部分</p>
-<p> &lt;%</p>
-<p>​        Java代码</p>
-<p>%&gt;</p>
-<p>本质上就是在Servlet的service方式中写的Java代码</p>
-</li>
-</ol>
-<p>​    &lt;%= %&gt;  等价于print() 方法</p>
-<h1 id="三、MVC设计模式"><a href="#三、MVC设计模式" class="headerlink" title="三、MVC设计模式"></a>三、MVC设计模式</h1><p>​        上面讲的Java脚本并不是JSP的常规用法，因为JSP页面内如果编写了Java业务逻辑代码，不是很好维护，HTML代码和Java代码混杂了，如果HTML代码有修改，那么JSP必须等待前端修改完毕后才能去开发JSP页面。</p>
-<p>学习期间可以使用JSP做案例或项目，正常企业里中大型项目不再使用JSP，推荐前后端分离方式开发，提高开发效率以及降低维护成不。</p>
-<p>学习JSP通常会使用在MVC设计模式中充当View的角色，什么是MVC设计模式？</p>
-<h2 id="3-1-EL表达式"><a href="#3-1-EL表达式" class="headerlink" title="3.1 EL表达式"></a>3.1 EL表达式</h2><p>${EL表达式}  ： EL  expression language  </p>
-<p>${属性名称}</p>
-<p>重点： EL表达式从域对象中根据属性名称取出值，域对象从</p>
-<p>pageContext -&gt; requestScope -&gt; sessionScope -&gt; applicationScope</p>
-<p>顺序找key</p>
-<p>${1+1}  EL可以做一些简单运算</p>
-<h2 id="3-2-JSTL"><a href="#3-2-JSTL" class="headerlink" title="3.2 JSTL"></a>3.2 JSTL</h2><p>JSP  Standard Tag Library  : JSP 标准标签库</p>
-<p>使用JSTL，需要&lt;%@ taglib %&gt;指令，同时还需要导入Jar包</p>
-<p>​        prefix属性：设置前缀， 指定的前缀代表整个标签库</p>
-<p>​        uri属性： 设置标签库的资源路径</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;&quot;</span>&gt;&lt;/c:<span class="keyword">if</span>&gt;  判断test后面的表达式是否为<span class="literal">true</span>，如果为<span class="literal">true</span>，输出标签体的内容</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:foreach&gt;</span><br><span class="line">    	类似：<span class="keyword">for</span>(Student s : stus)</span><br><span class="line">    	items属性：设置需要遍历的集合（stus）</span><br><span class="line">    	<span class="keyword">var</span>属性： 设置变量，将从集合中取出的元素赋值的变量（s）</span><br><span class="line">    	该标签会将<span class="keyword">var</span>设置变量存入域对象中，所以可以使用EL表达式取出这个变量</span><br><span class="line">    	varStatus属性：设置状态变量，这个状态变量JSP自动产生，</span><br><span class="line">    	</span><br><span class="line">    </span><br><span class="line">   		$&#123;对象.属性名称&#125; 调用对象的属性对应的get方法取出并输出</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="四、案例"><a href="#四、案例" class="headerlink" title="四、案例"></a>四、案例</h1><ol>
-<li><p>采用三层架构设计程序架构</p>
-<p>表现层： MVC设计模式，主要用于与用户交互</p>
-<p>业务层 ： 处理具体业务</p>
-<p>数据访问层 ： 对数据库进行操作</p>
-</li>
-<li><p>数据库： MySQL关系型数据库</p>
-</li>
-<li><p>JDBC： 操作数据库</p>
-</li>
-</ol>
-<p>功能需求： </p>
-<p>​    图书管理系统 增、删、改、查功能</p>
-<p>定义存放实体类的包 （数据bean）</p>
-<p>com.xxx.pojo    |    com.xxx.beans     |       com.xxx.domain</p>
-<p>定义存放servlet的包（控制器）</p>
-<p>com.xxx.web.servlet  |   com.xxx.web.controller   </p>
-<p>定义存放业务层接口的包</p>
-<p>com.xxx.service</p>
-<p>定义存放业务层实现类的包</p>
-<p>com.xxx.service.impl</p>
-<p>定义存放dao层接口的包</p>
-<p>com.xxx.dao</p>
-<p>定义存放dao层接口实现类的包</p>
-<p>com.xxx.dao.impl</p>
-<p>定义存放测试类的包</p>
-<p>com.xxx.test</p>
-<p>定义存放工具类的包</p>
-<p>com.xxx.utils</p>
-<p>定义存放自定义异常类的包</p>
-<p>com.xxx.exceptions</p>
+                <h1 id="一、入门和技术基础"><a href="#一、入门和技术基础" class="headerlink" title="一、入门和技术基础"></a>一、入门和技术基础</h1><h2 id="1-SSM框架和Redis概述"><a href="#1-SSM框架和Redis概述" class="headerlink" title="1.SSM框架和Redis概述"></a>1.SSM框架和Redis概述</h2><h2 id="1-1-Spring框架"><a href="#1-1-Spring框架" class="headerlink" title="1.1 Spring框架"></a>1.1 Spring框架</h2><p>spring官网：<a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/11e569e4427a49ff8a246df6768a77f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16">https://img-blog.csdnimg.cn/11e569e4427a49ff8a246df6768a77f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16</a></p>
+<p>Spring框架的两种思想的目的：降低耦合</p>
+<p>IoC (Inversion of Control)   控制反转</p>
+<p>​        IoC 是一个容器： 管理Java Bean和这些Bean之间的关系，</p>
+<p>​        Spring容器是通过 描述 来管理bean及其bean之间的依赖关系</p>
+<p>​        是一种被动行为，Spring IoC容器会根据描述（配置信息）来找到使用者需要的资源</p>
+<p>AOP(Aspect oriented  Programming) 面向切面编程</p>
+<p>​    A方法和B方法都需要对异常进行异常处理，方法操作时日志处理</p>
+<p>​        </p>
+<p>public void a() {</p>
+<p>​    try{</p>
+<p>​        业务代码</p>
+<p>​        日志处理</p>
+<p>​    } catch() {</p>
+<p>​        异常处理</p>
+<p>​    }</p>
+<p>}</p>
+<p>public void b() {</p>
+<p>​    try{</p>
+<p>​        业务代码</p>
+<p>​        日志处理</p>
+<p>​    } catch() {</p>
+<p>​        异常处理</p>
+<p>​    }</p>
+<p>}</p>
+<p>// AOP 将系统级服务代码和主业务代码分离，需要降低这两种代码的耦合</p>
+<p>// spring是一种非侵入框架</p>
+<p>public void a() {</p>
+<p>​    业务代码</p>
+<p>}</p>
+<h2 id="1-2-Mybatis框架"><a href="#1-2-Mybatis框架" class="headerlink" title="1.2 Mybatis框架"></a>1.2 Mybatis框架</h2><p>Mybatis是一种持久层框架（数据访问层）</p>
+<p>MyBatis和Hibernate框架的异同点</p>
+<p>相同点： </p>
+<p>都是持久层框架</p>
+<p>都是ORM（Object Relational Mapping）映射框架</p>
+<p>不同点：</p>
+<p>​    Hibernate是完全面向对象，全自动ORM映射框架，不需要写任何SQL语句，只需要调用API，Hibernate其实也是可以写SQL语句，但是不建议写SQL语句。</p>
+<p>​    MyBatis并不是完全面向对象，半自动ORM映射框架，需要写SQL语句，SQL可以优化</p>
+<p>​    </p>
+<h2 id="1-3-Spring-MVC"><a href="#1-3-Spring-MVC" class="headerlink" title="1.3 Spring MVC"></a>1.3 Spring MVC</h2><p>Spring MVC 是Spring framework框架中web组件</p>
+<p>Spring MVC 满足了MVC设计模式</p>
+<h2 id="1-4-SSM-Redis简图"><a href="#1-4-SSM-Redis简图" class="headerlink" title="1.4 SSM+Redis简图"></a>1.4 SSM+Redis简图</h2><p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/ccaac872016045448ecb2be7fe67f05e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16">https://img-blog.csdnimg.cn/ccaac872016045448ecb2be7fe67f05e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16</a></p>
+<h1 id="2-设计模式"><a href="#2-设计模式" class="headerlink" title="2.设计模式"></a>2.设计模式</h1><h2 id="2-1-动态代理模式"><a href="#2-1-动态代理模式" class="headerlink" title="2.1 动态代理模式"></a>2.1 动态代理模式</h2><p>代理： 生成一个代理对象，来代理真实对象，从而控制真实对象的访问</p>
+<h3 id="2-1-1-静态代理"><a href="#2-1-1-静态代理" class="headerlink" title="2.1.1 静态代理"></a>2.1.1 静态代理</h3><p>​    在编译期需要程序员通过程序自定义代理类和创建代理对象</p>
+<p>​    代码参考01_static_proxy</p>
+<h3 id="2-1-2动态代理"><a href="#2-1-2动态代理" class="headerlink" title="2.1.2动态代理"></a>2.1.2动态代理</h3><p>JDK动态（Dynamic）代理</p>
+<p>​        javase提供了动态产生代理对象的API，JDK动态代理需要业务接口，在程序运行过程中动态产生代理对象</p>
 
                 
             </div>
@@ -568,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/04/04/JSP/">https://shujian2022.github.io/2022/04/04/JSP/</a>
+                    <a href="https://shujian2022.github.io/2022/04/06/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">https://shujian2022.github.io/2022/04/06/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,8 +580,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JSP/">
-                                    <span class="chip bg-color">JSP</span>
+                                <a href="/tags/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
+                                    <span class="chip bg-color">SSM框架和Redis概述</span>
                                 </a>
                             
                         </div>
@@ -785,13 +759,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/06/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
+                <a href="/2022/04/11/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SSM框架何Redis概述">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="构造者模式">
                         
-                        <span class="card-title">SSM框架何Redis概述</span>
+                        <span class="card-title">构造者模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -802,7 +776,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
                         </span>
                         <span class="publish-author">
                             
@@ -815,8 +789,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
-                        <span class="chip bg-color">SSM框架和Redis概述</span>
+                    <a href="/tags/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">构造者模式</span>
                     </a>
                     
                 </div>
@@ -830,13 +804,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/31/JDBC%E6%A6%82%E8%BF%B0/">
+                <a href="/2022/04/04/JSP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="JDBC概述">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JSP">
                         
-                        <span class="card-title">JDBC概述</span>
+                        <span class="card-title">JSP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -847,7 +821,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
                             </span>
                         <span class="publish-author">
                             
@@ -860,8 +834,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JDBC/">
-                        <span class="chip bg-color">JDBC</span>
+                    <a href="/tags/JSP/">
+                        <span class="chip bg-color">JSP</span>
                     </a>
                     
                 </div>
