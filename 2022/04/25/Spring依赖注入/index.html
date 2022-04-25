@@ -4,12 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="构造者模式, 弱翁茶馆">
-    <meta name="description" content="一、构造者（Builder）模式 
-23种设计模式：http://c.biancheng.net/view/1317.html
-二、MyBatis持久层框架2.1 MyBatis特点
-不屏蔽SQL，可以优化SQL语句
-提供了强大、灵活的映射">
+    <meta name="keywords" content="Spring依赖注入, 弱翁茶馆">
+    <meta name="description" content="一、装配Spring Bean​    Ioc控制反转： 是一种思想，实现方式
+​    Dependency  LookUp  依赖查找（Java JNDI）
+​    Dependency Injecttion  依赖注入 （Sprin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>构造者模式 | 弱翁茶馆</title>
+    <title>Spring依赖注入 | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -313,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">构造者模式</h1>
+                    <h1 class="description center-align post-title">Spring依赖注入</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">构造者模式</span>
+                            <a href="/tags/Spring/">
+                                <span class="chip bg-color">Spring</span>
                             </a>
                         
                     </div>
@@ -450,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-11
+                    2022-04-25
                 </div>
                 
 
@@ -471,46 +469,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、构造者（Builder）模式"><a href="#一、构造者（Builder）模式" class="headerlink" title="一、构造者（Builder）模式"></a>一、构造者（Builder）模式</h1><p><img src="https://img-blog.csdnimg.cn/93f5ad9dc92646b5bf51080f3b91d3ab.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"> </p>
-<p>23种设计模式：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1317.html">http://c.biancheng.net/view/1317.html</a></p>
-<h1 id="二、MyBatis持久层框架"><a href="#二、MyBatis持久层框架" class="headerlink" title="二、MyBatis持久层框架"></a>二、MyBatis持久层框架</h1><h2 id="2-1-MyBatis特点"><a href="#2-1-MyBatis特点" class="headerlink" title="2.1 MyBatis特点"></a>2.1 MyBatis特点</h2><ul>
-<li>不屏蔽SQL，可以优化SQL语句</li>
-<li>提供了强大、灵活的映射机制</li>
-<li>Mapper接口编程</li>
-</ul>
-<h2 id="2-2-Mybatis框架下载"><a href="#2-2-Mybatis框架下载" class="headerlink" title="2.2 Mybatis框架下载"></a>2.2 Mybatis框架下载</h2><p>Mybatis源码：<a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3">https://github.com/mybatis/mybatis-3</a></p>
-<p>Mybatis框架下载 :<a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3/releases/tag/mybatis-3.4.1">https://github.com/mybatis/mybatis-3/releases/tag/mybatis-3.4.1</a></p>
-<h2 id="2-3-Mybatis框架目录结构"><a href="#2-3-Mybatis框架目录结构" class="headerlink" title="2.3 Mybatis框架目录结构"></a>2.3 Mybatis框架目录结构</h2><p>! <img src="https://img-blog.csdnimg.cn/2369e20630f04bc583bbec75a844431b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"> </p>
-<p> <img src="https://img-blog.csdnimg.cn/814d1e61d02e40269ea69b4ba16fe391.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"> </p>
-<h2 id="2-4-MyBatis核心组件"><a href="#2-4-MyBatis核心组件" class="headerlink" title="2.4 MyBatis核心组件"></a>2.4 MyBatis核心组件</h2><p>SqlSessionFactoryBuilder  (构造者设计模式)： 构造SqlSessionFactory对象</p>
-<p>SqlSessionFactory (工厂设计模式): 由工厂产生SqlSession对象</p>
-<p>SqlSesssion 会话对象：</p>
-<pre><code>通过SqlSession对象的API能发送SQL语句
-
-获取Mapper映射器（正常开发中“消失”），在业务代码中不体现这个对象
-</code></pre>
-<p>Mapper映射器对象： 就是Dao层接口与XML配置文件（注解）结合，达到Dao层接口实现类对象的效果（动态代理产生）</p>
-<p> <img src="https://img-blog.csdnimg.cn/59dd76d886f44681b1338e4a8389e2b1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"> </p>
-<h2 id="2-5-组件详解"><a href="#2-5-组件详解" class="headerlink" title="2.5 组件详解"></a>2.5 组件详解</h2><h3 id="2-5-1-SqlSessionFactory"><a href="#2-5-1-SqlSessionFactory" class="headerlink" title="2.5.1 SqlSessionFactory"></a>2.5.1 SqlSessionFactory</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.apache.ibatis.session;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">SqlSessionFactory</span> &#123;</span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(<span class="type">boolean</span> var1)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(Connection var1)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(TransactionIsolationLevel var1)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(ExecutorType var1)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(ExecutorType var1, <span class="type">boolean</span> var2)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(ExecutorType var1, TransactionIsolationLevel var2)</span>;</span><br><span class="line"></span><br><span class="line">    SqlSession <span class="title function_">openSession</span><span class="params">(ExecutorType var1, Connection var2)</span>;</span><br><span class="line"></span><br><span class="line">    Configuration <span class="title function_">getConfiguration</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                <h1 id="一、装配Spring-Bean"><a href="#一、装配Spring-Bean" class="headerlink" title="一、装配Spring Bean"></a>一、装配Spring Bean</h1><p>​    Ioc控制反转： 是一种思想，实现方式</p>
+<p>​    Dependency  LookUp  依赖查找（Java JNDI）</p>
+<p>​    Dependency Injecttion  依赖注入 （Spring）</p>
+<h2 id="1-1-Spring依赖注入的方式"><a href="#1-1-Spring依赖注入的方式" class="headerlink" title="1.1 Spring依赖注入的方式"></a>1.1 Spring依赖注入的方式</h2><p>构造注入（调用构造方法）</p>
+<p>设置注入（调用set方法）</p>
+<p>接口注入（JNDI技术）</p>
+<h3 id="1-1-1-构造注入"><a href="#1-1-1-构造注入" class="headerlink" title="1.1.1 构造注入"></a>1.1.1 构造注入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--给bean初始化一些数据：依赖注入</span></span><br><span class="line"><span class="comment">      构造注入:使用子标签 &lt;constructor-arg&gt; 调用有参构造方法给bean注入初始值</span></span><br><span class="line"><span class="comment">          index属性: 设置参数的下标  默认从0开始</span></span><br><span class="line"><span class="comment">          不推荐，因为可读性差</span></span><br><span class="line"><span class="comment">  &lt;bean class=&quot;com.apps.pojo.Person&quot;&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg index=&quot;0&quot; value=&quot;喜洋洋&quot;/&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg index=&quot;1&quot; value=&quot;14&quot;/&gt;</span></span><br><span class="line"><span class="comment">  &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">      使用构造注入：</span></span><br><span class="line"><span class="comment">          &lt;constructor-arg&gt;</span></span><br><span class="line"><span class="comment">          name属性：设置参数的名称</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  &lt;bean class=&quot;com.apps.pojo.Person&quot;&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg name=&quot;name&quot;  value=&quot;喜洋洋&quot;/&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg name=&quot;age&quot; value=&quot;14&quot;/&gt;</span></span><br><span class="line"><span class="comment">  &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--1.创建一个地址对象--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;address&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Address&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;province&quot;</span> <span class="attr">value</span>=<span class="string">&quot;湖南&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span> <span class="attr">value</span>=<span class="string">&quot;长沙&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;area&quot;</span> <span class="attr">value</span>=<span class="string">&quot;望城&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--2.创建一个Person对象</span></span><br><span class="line"><span class="comment">      value只能注入基本数据类型和String类型</span></span><br><span class="line"><span class="comment">      如果是注入另一个对象需要使用 ref属性 引用另一个bean的id属性的值</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;张三&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span> <span class="attr">value</span>=<span class="string">&quot;21&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;address&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h3 id="1-1-2-setter（设值）注入"><a href="#1-1-2-setter（设值）注入" class="headerlink" title="1.1.2 setter（设值）注入"></a>1.1.2 setter（设值）注入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--1.创建Address bean--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;addr&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Address&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;province&quot;</span> <span class="attr">value</span>=<span class="string">&quot;湖北&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span> <span class="attr">value</span>=<span class="string">&quot;武汉&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;area&quot;</span> <span class="attr">value</span>=<span class="string">&quot;光谷&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--2.创建Person bean--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;田七&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span> <span class="attr">value</span>=<span class="string">&quot;34&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;addr&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="2-Spring装配Bean"><a href="#2-Spring装配Bean" class="headerlink" title="2. Spring装配Bean"></a>2. Spring装配Bean</h2><h3 id="2-1-基于XML方式装配Bean"><a href="#2-1-基于XML方式装配Bean" class="headerlink" title="2.1 基于XML方式装配Bean"></a>2.1 基于XML方式装配Bean</h3><p>装配简易值</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClassName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql:///d_user&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>##2.6入门案例</p>
-<p>创建Java程序，导入Mybatis的核心Jar及其依赖包</p>
-<h2 id="2-6-1-创建MyBatis的核心配置文件"><a href="#2-6-1-创建MyBatis的核心配置文件" class="headerlink" title="2.6.1 创建MyBatis的核心配置文件"></a>2.6.1 创建MyBatis的核心配置文件</h2><p>在类路径下（src）创建一个mybatis-config.xml(文件名称随意)</p>
-<p>在配置文件中编写如下xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="comment">&lt;!--引入xml的约束文件： 约束当前xml文档中能使用什么标签</span></span><br><span class="line"><span class="comment">        xml:可扩展标记语言，描述信息的方式就是标签，HTML是它的子集</span></span><br><span class="line"><span class="comment">        而且可以自定义标签, 所以可以通过约束文件来约束当前xml文档中</span></span><br><span class="line"><span class="comment">        只能使用约束文件中（命名空间）定义的标签</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        xml的约束文件分为两种</span></span><br><span class="line"><span class="comment">        dtd:  Mybatis使用的就是这种</span></span><br><span class="line"><span class="comment">        schema: spring使用的就是这种</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p> <img src="https://img-blog.csdnimg.cn/26fca797c371473cb33c4d730e60a4f2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IiS5byx57-B,size_15,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"> </p>
-<p>事务有四种特点，被称为ACID特性：</p>
-<p>原子性（Atomicity） 当事务结束，它对所有资源状态的改变都被视为一个操作，这些操作要不同时成功，要不同时失败　　<br> 一致性（Consistency） 操作完成后，所有数据必须符合业务规则，否则事务必须中止<br> 隔离性（Isolation） 事务以相互隔离的方式执行，事务以外的实体无法知道事务过程中的中间状态<br> 持久性（Durable） 事务提交后，数据必须以一种持久性方式存储起来</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Configuration</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Configuration</span><span class="params">()</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">            <span class="built_in">this</span>.typeAliasRegistry.registerAlias(<span class="string">&quot;JDBC&quot;</span>, JdbcTransactionFactory.class);</span><br><span class="line">        <span class="built_in">this</span>.typeAliasRegistry.registerAlias(<span class="string">&quot;MANAGED&quot;</span>, ManagedTransactionFactory.class);</span><br><span class="line">        <span class="built_in">this</span>.typeAliasRegistry.registerAlias(<span class="string">&quot;JNDI&quot;</span>, JndiDataSourceFactory.class);</span><br><span class="line">        <span class="built_in">this</span>.typeAliasRegistry.registerAlias(<span class="string">&quot;POOLED&quot;</span>, PooledDataSourceFactory.class);</span><br><span class="line">        <span class="built_in">this</span>.typeAliasRegistry.registerAlias(<span class="string">&quot;UNPOOLED&quot;</span>, UnpooledDataSourceFactory.class);</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -536,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/04/11/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">https://shujian2022.github.io/2022/04/11/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</a>
+                    <a href="https://shujian2022.github.io/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">https://shujian2022.github.io/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,8 +551,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">构造者模式</span>
+                                <a href="/tags/Spring/">
+                                    <span class="chip bg-color">Spring</span>
                                 </a>
                             
                         </div>
@@ -749,9 +726,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
                     <div class="card-image">
@@ -769,9 +747,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -780,6 +758,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -798,13 +777,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/06/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
+                <a href="/2022/04/11/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SSM框架何Redis概述">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="构造者模式">
                         
-                        <span class="card-title">SSM框架何Redis概述</span>
+                        <span class="card-title">构造者模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -815,7 +794,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
                             </span>
                         <span class="publish-author">
                             
@@ -828,8 +807,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSM%E6%A1%86%E6%9E%B6%E5%92%8CRedis%E6%A6%82%E8%BF%B0/">
-                        <span class="chip bg-color">SSM框架和Redis概述</span>
+                    <a href="/tags/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">构造者模式</span>
                     </a>
                     
                 </div>
