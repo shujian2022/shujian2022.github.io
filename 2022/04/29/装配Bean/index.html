@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Spring依赖注入, 弱翁茶馆">
-    <meta name="description" content="一、装配Spring Bean​    Ioc控制反转： 是一种思想，实现方式
-​    Dependency  LookUp  依赖查找（Java JNDI）
-​    Dependency Injecttion  依赖注入 （Sprin">
+    <meta name="keywords" content="装配Bean, 弱翁茶馆">
+    <meta name="description" content="一、装配bean1.1 使用命名空间装配bean使用c命名空间：本质上是构造注入，需要引入c命名空间
+1xmlns:c=&amp;quot;http://www.springframework.org/schema/c&amp;quot;
+
+基本使用：
+1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Spring依赖注入 | 弱翁茶馆</title>
+    <title>装配Bean | 弱翁茶馆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Spring依赖注入</h1>
+                    <h1 class="description center-align post-title">装配Bean</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring/">
-                                <span class="chip bg-color">Spring</span>
+                            <a href="/tags/Bean/">
+                                <span class="chip bg-color">Bean</span>
                             </a>
                         
                     </div>
@@ -448,7 +450,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-25
+                    2022-04-29
                 </div>
                 
 
@@ -469,24 +471,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、装配Spring-Bean"><a href="#一、装配Spring-Bean" class="headerlink" title="一、装配Spring Bean"></a>一、装配Spring Bean</h1><p>​    Ioc控制反转： 是一种思想，实现方式</p>
-<p>​    Dependency  LookUp  依赖查找（Java JNDI）</p>
-<p>​    Dependency Injecttion  依赖注入 （Spring）</p>
-<h2 id="1-1-Spring依赖注入的方式"><a href="#1-1-Spring依赖注入的方式" class="headerlink" title="1.1 Spring依赖注入的方式"></a>1.1 Spring依赖注入的方式</h2><p>构造注入（调用构造方法）</p>
-<p>设置注入（调用set方法）</p>
-<p>接口注入（JNDI技术）</p>
-<h3 id="1-1-1-构造注入"><a href="#1-1-1-构造注入" class="headerlink" title="1.1.1 构造注入"></a>1.1.1 构造注入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--给bean初始化一些数据：依赖注入</span></span><br><span class="line"><span class="comment">      构造注入:使用子标签 &lt;constructor-arg&gt; 调用有参构造方法给bean注入初始值</span></span><br><span class="line"><span class="comment">          index属性: 设置参数的下标  默认从0开始</span></span><br><span class="line"><span class="comment">          不推荐，因为可读性差</span></span><br><span class="line"><span class="comment">  &lt;bean class=&quot;com.apps.pojo.Person&quot;&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg index=&quot;0&quot; value=&quot;喜洋洋&quot;/&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg index=&quot;1&quot; value=&quot;14&quot;/&gt;</span></span><br><span class="line"><span class="comment">  &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">      使用构造注入：</span></span><br><span class="line"><span class="comment">          &lt;constructor-arg&gt;</span></span><br><span class="line"><span class="comment">          name属性：设置参数的名称</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  &lt;bean class=&quot;com.apps.pojo.Person&quot;&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg name=&quot;name&quot;  value=&quot;喜洋洋&quot;/&gt;</span></span><br><span class="line"><span class="comment">      &lt;constructor-arg name=&quot;age&quot; value=&quot;14&quot;/&gt;</span></span><br><span class="line"><span class="comment">  &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--1.创建一个地址对象--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;address&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Address&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;province&quot;</span> <span class="attr">value</span>=<span class="string">&quot;湖南&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span> <span class="attr">value</span>=<span class="string">&quot;长沙&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;area&quot;</span> <span class="attr">value</span>=<span class="string">&quot;望城&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--2.创建一个Person对象</span></span><br><span class="line"><span class="comment">      value只能注入基本数据类型和String类型</span></span><br><span class="line"><span class="comment">      如果是注入另一个对象需要使用 ref属性 引用另一个bean的id属性的值</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;张三&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span> <span class="attr">value</span>=<span class="string">&quot;21&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;address&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="一、装配bean"><a href="#一、装配bean" class="headerlink" title="一、装配bean"></a>一、装配bean</h1><h2 id="1-1-使用命名空间装配bean"><a href="#1-1-使用命名空间装配bean" class="headerlink" title="1.1 使用命名空间装配bean"></a>1.1 使用命名空间装配bean</h2><p>使用c命名空间：本质上是构造注入，需要引入c命名空间</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:c=&quot;http://www.springframework.org/schema/c&quot;</span><br></pre></td></tr></table></figure>
+
+<p>基本使用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;per&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span> <span class="attr">c:name</span>=<span class="string">&quot;张无忌&quot;</span> <span class="attr">c:age</span>=<span class="string">&quot;22&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;per&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span> <span class="attr">c:_0</span>=<span class="string">&quot;虚竹&quot;</span> <span class="attr">c:_1</span>=<span class="string">&quot;22&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="1-1-2-setter（设值）注入"><a href="#1-1-2-setter（设值）注入" class="headerlink" title="1.1.2 setter（设值）注入"></a>1.1.2 setter（设值）注入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--1.创建Address bean--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;addr&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Address&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;province&quot;</span> <span class="attr">value</span>=<span class="string">&quot;湖北&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span> <span class="attr">value</span>=<span class="string">&quot;武汉&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;area&quot;</span> <span class="attr">value</span>=<span class="string">&quot;光谷&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--2.创建Person bean--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;田七&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span> <span class="attr">value</span>=<span class="string">&quot;34&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;addr&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用p命名空间：本质上是设置注入，需要引入p命名空间</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</span><br></pre></td></tr></table></figure>
+
+<p>基本使用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;per&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.apps.pojo.Person&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;段誉&quot;</span> <span class="attr">p:age</span>=<span class="string">&quot;21&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="2-Spring装配Bean"><a href="#2-Spring装配Bean" class="headerlink" title="2. Spring装配Bean"></a>2. Spring装配Bean</h2><h3 id="2-1-基于XML方式装配Bean"><a href="#2-1-基于XML方式装配Bean" class="headerlink" title="2.1 基于XML方式装配Bean"></a>2.1 基于XML方式装配Bean</h3><p>装配简易值</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClassName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql:///d_user&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-使用注解装配Bean"><a href="#1-2-使用注解装配Bean" class="headerlink" title="1.2 使用注解装配Bean"></a>1.2 使用注解装配Bean</h2><p>@Component注解：修饰一个类是一个组件，这个组件能够被Spring IoC容器扫描到，扫描到就能被Spring容器管理,</p>
+<p>@Component注解默认扫描当前包及其子包，如果扫描的不是当前包及其子包，需要扫描指定的包，可以使用该注解的value属性（或者basePackages属性）指定要扫描的包</p>
+<p>@Value注解：修饰成员变量，可以给成员变量初始化数据，支持Spring EL</p>
+<p>在使用注解开发时，发生异常，Spring注解开发依赖了AOP编程</p>
+<p>需要引入spring-aop.jar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.ClassNotFoundException: org.springframework.aop.TargetSource</span><br></pre></td></tr></table></figure>
 
 
+
+<h2 id="1-3-自动装配-Autowired"><a href="#1-3-自动装配-Autowired" class="headerlink" title="1.3  自动装配  @Autowired"></a>1.3  自动装配  @Autowired</h2><p>@Autowired</p>
+<p>​        首先按照类型自动注入，如果有多个类型的bean，按照属性名称和bean的id进行匹配自动注入，但是如果没有匹配的id，会发生异常,不唯一的bean异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.beans.factory.NoUniqueBeanDefinitionException</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​        required属性： true ： 容器必须要有这个类型的bean</p>
+<p>​                                    false:  容器中可以没有这个类型的bean</p>
+<p>当spring容器中存在多个同类型的bean，属性名和bean的id没有匹配，此时要解决自动装配歧义性问题，可以使用</p>
+<p>@Primary ： 指定多个bean中的某个bean优先级最高</p>
+<p>@Qualifier :  必须和@Autowired注解一起使用，指定bean的id</p>
+<p>@Resource： JSR-303   Java规范提供的注解，可以按照指定bean的id名称进行注入</p>
 
                 
             </div>
@@ -513,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shujian2022.github.io/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">https://shujian2022.github.io/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</a>
+                    <a href="https://shujian2022.github.io/2022/04/29/%E8%A3%85%E9%85%8DBean/">https://shujian2022.github.io/2022/04/29/%E8%A3%85%E9%85%8DBean/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,8 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Spring/">
-                                    <span class="chip bg-color">Spring</span>
+                                <a href="/tags/Bean/">
+                                    <span class="chip bg-color">Bean</span>
                                 </a>
                             
                         </div>
@@ -726,9 +747,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/29/%E8%A3%85%E9%85%8DBean/">
                     <div class="card-image">
@@ -746,9 +768,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -757,6 +779,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -775,13 +798,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/11/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                <a href="/2022/04/25/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="构造者模式">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Spring依赖注入">
                         
-                        <span class="card-title">构造者模式</span>
+                        <span class="card-title">Spring依赖注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,7 +815,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
                             </span>
                         <span class="publish-author">
                             
@@ -805,8 +828,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9E%84%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">构造者模式</span>
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>
